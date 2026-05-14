@@ -99,7 +99,7 @@ export default function Navbar({ activePage = '' }) {
                 ]}
               />
 
-              <a href="/what-we-do#conference" className={isActive('conference')}>AWIEF2026 CONFERENCE & EXPO</a>
+              <a href="/purchase-conference-tickets" className={isActive('conference')}>AWIEF2026 CONFERENCE & EXPO</a>
 
               <a href="/our-impact" className={isActive('our-impact')}>OUR IMPACT</a>
 
@@ -141,7 +141,7 @@ export default function Navbar({ activePage = '' }) {
               <a href="/" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">HOME</a>
               <a href="/about" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">ABOUT</a>
               <a href="/what-we-do" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">WHAT WE DO</a>
-              <a href="/what-we-do#conference" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter text-center">AWIEF2026 CONFERENCE & EXPO</a>
+              <a href="/purchase-conference-tickets" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter text-center">AWIEF2026 CONFERENCE & EXPO</a>
               <a href="/our-impact" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">OUR IMPACT</a>
               <a href="/news" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">NEWS</a>
               <a href="/get-involved" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">GET INVOLVED</a>
