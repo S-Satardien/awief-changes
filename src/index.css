@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #7f3d59;
+  --color-brand-dark: #5e2c41;
+  --color-brand-light: #a85d7a;
+  --color-gold: #D4AF37;
+  --color-berry: #1d0b14;
+  --color-warm: #fdf8f9;
+  --color-cream: #FDFCFA;
+  --color-charcoal: #1d0b14;
+  --font-heading: 'Arial', sans-serif;
+  --font-body: 'Arial', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  @apply bg-warm text-charcoal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+@layer utilities {
+  .editorial-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
+  }
+
+  .overlap-top {
+    @apply -mt-24 relative z-10;
+  }
+
+  .overlap-bottom {
+    @apply -mb-24 relative z-10;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px currentColor;
+    color: transparent;
+  }
+
+  .section-spacing {
+    @apply py-12 md:py-16;
+  }
+
+  .transition-editorial {
+    @apply transition-all duration-700 ease-[cubic-bezier(0.4,0,0.2,1)];
+  }
+
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-md border border-white/30 shadow-[0_8px_32px_0_rgba(45,55,72,0.05)];
+  }
+
+  .african-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 0L80 40L40 80L0 40Z' fill='none' stroke='%23ffffff' stroke-width='1' opacity='0.2'/%3E%3Cpath d='M40 20L60 40L40 60L20 40Z' fill='none' stroke='%23D4AF37' stroke-width='0.5' opacity='0.3'/%3E%3Ccircle cx='40' cy='40' r='2' fill='%237f3d59' opacity='0.4'/%3E%3C/svg%3E");
+  }
+}
