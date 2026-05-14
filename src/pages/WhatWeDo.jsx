@@ -95,7 +95,7 @@ export default function WhatWeDo() {
       <Navbar activePage="what-we-do" />
 
       {/* Editorial Header - Synchronized Brand Identity */}
-      <header className="relative bg-brand pt-56 pb-32 px-6 md:px-12 overflow-hidden text-center">
+      <header className="relative bg-brand pt-56 pb-16 px-6 md:px-12 overflow-hidden text-center">
         <div className="african-pattern absolute inset-0 opacity-30 scale-150 rotate-12 brightness-200"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand/50 to-brand z-10 pointer-events-none"></div>
         
@@ -114,7 +114,7 @@ export default function WhatWeDo() {
       </header>
 
       {/* Filterable Programmes Section */}
-      <section className="py-32 px-6 md:px-12 bg-warm rounded-t-[60px] -mt-12 relative z-20" id="programmes">
+      <section className="py-16 px-6 md:px-12 bg-warm rounded-t-[60px] -mt-6 relative z-20" id="programmes">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
@@ -179,18 +179,18 @@ export default function WhatWeDo() {
       </section>
 
       {/* Immersive Summit Experience - High Impact Berry */}
-      <section className="py-40 px-6 md:px-12 bg-brand text-white relative overflow-hidden" id="conference">
+      <section className="py-20 px-6 md:px-12 bg-brand text-white relative overflow-hidden" id="conference">
          <div className="african-pattern absolute inset-0 opacity-30 scale-150 rotate-12 brightness-200"></div>
-         <div className="absolute top-0 right-0 p-24 opacity-10 pointer-events-none select-none text-[30rem] font-black rotate-12 text-white/10">2026</div>
+         <div className="absolute top-0 right-0 p-12 opacity-10 pointer-events-none select-none text-[15rem] font-black rotate-12 text-white/10">2026</div>
          
          <div className="max-w-[1400px] mx-auto relative z-10">
-            <div className="grid lg:grid-cols-12 gap-24 items-center">
+            <div className="grid lg:grid-cols-2 gap-12 mt-8 pt-8 border-t border-white/10">
                <div className="lg:col-span-7">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand/40 bg-brand/10 backdrop-blur mb-10">
-                     <Sparkles size={12} className="text-brand animate-pulse"/>
-                     <span className="text-brand text-[9px] font-black tracking-[0.3em] uppercase">Save The Date</span>
+                  <div className="inline-flex items-center gap-2 px-2 py-0.5 rounded-full border border-brand/40 bg-brand/10 backdrop-blur mb-5">
+                     <Sparkles size={8} className="text-brand animate-pulse"/>
+                     <span className="text-brand text-[7px] font-black tracking-[0.3em] uppercase">Save The Date</span>
                   </div>
-                  <h2 className="text-6xl md:text-[8rem] font-black uppercase font-heading leading-[0.75] tracking-tighter mb-10">
+                  <h2 className="text-4xl md:text-6xl font-black uppercase font-heading leading-[0.75] tracking-tighter mb-5">
                     Beyond <br/> <span className="text-gold serif italic normal-case">Access</span>
                   </h2>
                   <p className="text-2xl md:text-3xl text-white/80 font-medium leading-tight italic max-w-2xl border-l-8 border-gold pl-12 mb-16">
@@ -238,7 +238,7 @@ export default function WhatWeDo() {
       </section>
 
       {/* Awards Hub - High Authority White Spread */}
-      <section className="py-40 px-6 md:px-12 bg-white relative overflow-hidden" id="awards">
+      <section className="py-20 px-6 md:px-12 bg-white relative overflow-hidden" id="awards">
         <div className="max-w-[1400px] mx-auto relative z-10">
           <div className="flex flex-col lg:flex-row gap-24">
             
@@ -312,7 +312,7 @@ export default function WhatWeDo() {
       </section>
 
       {/* Advocacy Section - Editorial Cream/Berry Split */}
-      <section className="py-32 px-6 md:px-12 bg-warm rounded-t-[60px]" id="advocacy">
+      <section className="py-16 px-6 md:px-12 bg-warm rounded-t-[60px]" id="advocacy">
         <div className="max-w-[1200px] mx-auto grid lg:grid-cols-12 gap-16 items-center">
           <div className="lg:col-span-7">
              <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-brand/10 mb-8">
