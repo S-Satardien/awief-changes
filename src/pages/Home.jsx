@@ -72,7 +72,7 @@ export default function Home() {
       </section>
 
       {/* Editorial Mission Card Section */}
-      <section className="bg-white py-12 px-8">
+      <section className="bg-white py-6 px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="bg-brand/5 border-l-[12px] border-brand p-8 md:p-12 rounded-[40px] relative overflow-hidden shadow-sm group hover:shadow-xl transition-editorial">
              <div className="african-pattern absolute inset-0 opacity-[0.2] scale-150 pointer-events-none brightness-0 contrast-200"></div>
