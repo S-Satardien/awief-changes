@@ -184,7 +184,7 @@ export default function WhatWeDo() {
          <div className="absolute top-0 right-0 p-24 opacity-10 pointer-events-none select-none text-[30rem] font-black rotate-12 text-white/10">2026</div>
          
          <div className="max-w-[1400px] mx-auto relative z-10">
-            <div className="grid lg:grid-cols-12 gap-24 items-center mb-40">
+            <div className="grid lg:grid-cols-12 gap-24 items-center">
                <div className="lg:col-span-7">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand/40 bg-brand/10 backdrop-blur mb-10">
                      <Sparkles size={12} className="text-brand animate-pulse"/>
@@ -194,84 +194,44 @@ export default function WhatWeDo() {
                     Beyond <br/> <span className="text-gold serif italic normal-case">Access</span>
                   </h2>
                   <p className="text-2xl md:text-3xl text-white/80 font-medium leading-tight italic max-w-2xl border-l-8 border-gold pl-12 mb-16">
-                    Economic Empowerment in a Digital Era. The nexus of policy, capital, and innovation.
+                    Beyond Access: Owning Capital, Markets & Power. The nexus of policy, capital, and innovation.
                   </p>
-                  <div className="flex flex-wrap gap-8 items-center">
+                  <div className="flex flex-wrap gap-8 items-center mb-16">
                      <a href="/purchase-conference-tickets" className="bg-white text-charcoal px-12 py-6 rounded-full font-black text-[10px] uppercase tracking-[0.3em] hover:bg-gold hover:text-white transition-editorial shadow-2xl">
-                        REGISTER NOW
+                        GO TO AWIEF2026
                      </a>
                      <div className="flex items-center gap-6">
                         <div className="text-right">
-                           <p className="text-[10px] font-black text-gold uppercase tracking-widest">October 8 - 9, 2026</p>
+                           <p className="text-[10px] font-black text-gold uppercase tracking-widest">10 – 11 November 2026</p>
                            <p className="text-sm font-black uppercase font-heading tracking-tight text-white">Cape Town, South Africa</p>
                         </div>
-                        <a href="https://www.youtube.com/watch?v=qg1mfSal_Eg" target="_blank" rel="noopener noreferrer" className="w-14 h-14 rounded-full border border-white/20 flex items-center justify-center hover:bg-gold hover:text-white transition-editorial cursor-pointer">
-                           <Play size={20} fill="currentColor"/>
-                        </a>
                      </div>
                   </div>
-                  <div className="mt-16 flex items-center gap-4">
-                     <a href="/past-conferences" className="text-white/40 font-black text-[10px] uppercase tracking-[0.4em] hover:bg-gold hover:text-white transition-editorial flex items-center gap-3 group">
-                        VIEW PAST CONFERENCES <MoveRight size={18} className="group-hover:translate-x-2 transition-editorial text-gold" />
-                     </a>
+                  <div className="space-y-6 text-white/60 text-lg font-medium italic leading-relaxed">
+                    <p>
+                      The AWIEF Annual Conference and Awards is Africa’s premier platform for women in entrepreneurship, leadership, and innovation. 
+                    </p>
+                    <p>
+                      Convening the continent’s most influential entrepreneurs, investors, corporates, policymakers, and ecosystem builders to accelerate collaboration and unlock new markets.
+                    </p>
                   </div>
                </div>
                <div className="lg:col-span-5 relative">
-                  <div className="aspect-[4/5] rounded-[64px] overflow-hidden shadow-[0_0_100px_rgba(127,61,89,0.3)] rotate-2 hover:rotate-0 transition-editorial duration-1000 relative group border-4 border-white/5 bg-charcoal">
-                     <img src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?w=1000&q=80" alt="Summit" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-editorial duration-1000" />
-                     <div className="absolute inset-0 bg-gradient-to-t from-brand/80 via-transparent to-transparent opacity-80"></div>
-                     <div className="absolute bottom-10 left-10 right-10">
-                        <p className="text-[9px] font-black tracking-widest uppercase text-gold mb-3">Live Momentum</p>
-                        <h4 className="text-2xl font-black uppercase font-heading text-white">1,500 Delegates</h4>
-                        <div className="w-10 h-1 bg-gold mt-4 group-hover:w-full transition-editorial"></div>
-                     </div>
+                  <div className="aspect-video rounded-[48px] overflow-hidden shadow-[0_0_100px_rgba(127,61,89,0.3)] relative group border-4 border-white/5 bg-charcoal">
+                    <iframe 
+                      className="w-full h-full grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-editorial duration-700"
+                      src="https://www.youtube.com/embed/qg1mfSal_Eg"
+                      title="AWIEF Conference Highlights"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    ></iframe>
                   </div>
-               </div>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-12 mt-16 pt-16 border-t border-white/10">
-               {/* What to Expect */}
-               <div>
-                 <h4 className="text-2xl font-black uppercase font-heading mb-8 flex items-center gap-3">
-                   <Lightbulb size={24} className="text-brand" /> What to Expect
-                 </h4>
-                 <div className="space-y-4">
-                    {[
-                      { icon: Mic, t: "Global Keynotes", d: "Hear from policymakers and titans shaping the future of African female entrepreneurship." },
-                      { icon: Briefcase, t: "Masterclasses", d: "Actionable sessions focusing on digital transformation and Series A investment readiness." },
-                      { icon: Star, t: "The Exhibition", d: "Discover innovative products and services from women-owned businesses across the continent." }
-                    ].map((item, i) => (
-                      <div key={i} className="bg-white/10 border border-white/20 p-8 rounded-[32px] flex items-start gap-6 group hover:bg-white/20 transition-editorial backdrop-blur-xl">
-                        <div className="mt-1 bg-white/10 rounded-full p-3 border border-gold/30 group-hover:bg-gold transition-editorial"><item.icon size={20} className="text-gold group-hover:text-white"/></div>
-                        <div>
-                          <h5 className="text-white font-black uppercase text-sm mb-1">{item.t}</h5>
-                          <p className="text-white/80 text-xs font-medium leading-relaxed italic">{item.d}</p>
-                        </div>
-                      </div>
-                    ))}
-                 </div>
-               </div>
-
-               {/* Why Attend */}
-               <div>
-                 <h4 className="text-2xl font-black uppercase font-heading mb-8 flex items-center gap-3">
-                   <Target size={24} className="text-brand" /> Why Attend?
-                 </h4>
-                 <div className="space-y-4">
-                    {[
-                      { icon: Users, t: "Unmatched Networking", d: "Connect directly with over 1,500 delegates from 50+ countries." },
-                      { icon: TrendingUp, t: "Secure Funding", d: "Direct access to venture capitalists and angel investors looking to back women." },
-                      { icon: Award, t: "Celebrate Excellence", d: "The prestigious AWIEF Awards Gala, honouring the pioneers of African business." }
-                    ].map((item, i) => (
-                      <div key={i} className="bg-white/10 border border-white/20 p-8 rounded-[32px] flex items-start gap-6 group hover:bg-white/20 transition-editorial backdrop-blur-xl">
-                        <div className="mt-1 bg-white/10 rounded-full p-3 border border-gold/30 group-hover:bg-gold transition-editorial"><item.icon size={20} className="text-gold group-hover:text-white"/></div>
-                        <div>
-                          <h5 className="text-white font-black uppercase text-sm mb-1">{item.t}</h5>
-                          <p className="text-white/80 text-xs font-medium leading-relaxed italic">{item.d}</p>
-                        </div>
-                      </div>
-                    ))}
-                 </div>
+                  <div className="mt-8 flex justify-center">
+                    <a href="/past-conferences" className="text-white/40 font-black text-[10px] uppercase tracking-[0.4em] hover:text-gold transition-editorial flex items-center gap-3 group">
+                        VIEW PAST CONFERENCES <MoveRight size={18} className="group-hover:translate-x-2 transition-editorial text-gold" />
+                    </a>
+                  </div>
                </div>
             </div>
          </div>
