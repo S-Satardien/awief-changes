@@ -548,20 +548,15 @@ export default function PurchaseTickets() {
                   </div>
                   <div className="space-y-6 mb-10">
                     <div className="p-6 bg-warm rounded-2xl border border-charcoal/5">
-                      <h4 className="text-xs font-black uppercase mb-2">Discounted Fares</h4>
+                      <h4 className="text-xs font-black uppercase mb-2">Exclusive Delegate Rates</h4>
                       <p className="text-[11px] text-charcoal/50 font-medium leading-relaxed italic">
-                        Registered delegates qualify for up to <strong className="text-brand">15% discount</strong> on flights.
+                        Special discounted airfares are available for all registered AWIEF delegates traveling from international and regional destinations.
                       </p>
                     </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-cream p-4 rounded-xl text-center">
-                         <p className="text-[8px] font-black text-brand uppercase mb-1">Code</p>
-                         <p className="text-xs font-black text-charcoal">AWIEF2026</p>
-                      </div>
-                      <div className="bg-cream p-4 rounded-xl text-center">
-                         <p className="text-[8px] font-black text-brand uppercase mb-1">Valid</p>
-                         <p className="text-xs font-black text-charcoal">Nov 5-15</p>
-                      </div>
+                    <div className="p-6 bg-cream rounded-2xl border border-charcoal/5">
+                      <p className="text-[10px] text-charcoal/40 font-medium italic leading-relaxed">
+                        Travel information and booking instructions will be shared directly with delegates upon successful registration.
+                      </p>
                     </div>
                   </div>
                   <a href="/contact-us" className="text-brand font-black text-[9px] uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-editorial">REQUEST FLIGHT CODES <ArrowUpRight size={16}/></a>
