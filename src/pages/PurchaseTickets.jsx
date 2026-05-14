@@ -152,11 +152,7 @@ export default function PurchaseTickets() {
         <div className="absolute inset-0 bg-gradient-to-b from-brand/40 via-brand to-brand/90 z-10"></div>
         
         <div className="absolute inset-0 z-0">
-           <img 
-            src="https://images.unsplash.com/photo-1540317580384-e5d43867caa6?w=1920&q=80" 
-            className="w-full h-full object-cover grayscale opacity-30" 
-            alt="AWIEF Summit"
-           />
+           {/* Background Image Removed */}
         </div>
 
         <div className="max-w-[1400px] mx-auto px-6 relative z-20 text-center">
