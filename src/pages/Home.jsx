@@ -107,15 +107,15 @@ export default function Home() {
               { icon: Globe, title: "ANNUAL CONFERENCE", label: "Connect", desc: "World-class networking and pan-African exhibitions.", bg: "bg-berry/5", link: "/what-we-do#conference" },
               { icon: Award, title: "AWIEF AWARDS", label: "Recognize", desc: "Recognizing outstanding female achievement.", bg: "bg-charcoal/5", link: "/what-we-do#awards" },
               { icon: BookOpen, title: "POLICY ADVOCACY", label: "Impact", desc: "Cross-cutting advocacy for gender equality.", bg: "bg-brand-light/5", link: "/what-we-do#advocacy" },
-            ].map((item, i) => (
-              <a href={item.link} key={i} className={`p-10 rounded-[32px] ${item.bg} group hover:bg-brand transition-editorial h-auto flex flex-col justify-between cursor-pointer border border-transparent hover:shadow-2xl`}>
+            ].map(({ icon: Icon, title, label, desc, bg, link }, i) => (
+              <a href={link} key={i} className={`p-10 rounded-[32px] ${bg} group hover:bg-brand transition-editorial h-auto flex flex-col justify-between cursor-pointer border border-transparent hover:shadow-2xl`}>
                 <div>
                   <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-brand shadow-sm group-hover:scale-110 transition-editorial mb-8">
-                    <item.icon size={32} strokeWidth={1.5} />
+                    <Icon size={32} strokeWidth={1.5} />
                   </div>
-                  <p className="text-[10px] font-black tracking-widest uppercase mb-2 group-hover:text-white/70">{item.label}</p>
-                  <h3 className="text-2xl font-black uppercase font-heading group-hover:text-white mb-4 leading-tight">{item.title}</h3>
-                  <p className="text-charcoal/50 text-sm font-medium leading-relaxed group-hover:text-white/70 transition-editorial">{item.desc}</p>
+                  <p className="text-[10px] font-black tracking-widest uppercase mb-2 group-hover:text-white/70">{label}</p>
+                  <h3 className="text-2xl font-black uppercase font-heading group-hover:text-white mb-4 leading-tight">{title}</h3>
+                  <p className="text-charcoal/50 text-sm font-medium leading-relaxed group-hover:text-white/70 transition-editorial">{desc}</p>
                 </div>
                 <div className="mt-8 text-brand font-black tracking-widest text-[10px] uppercase group-hover:text-white transition-editorial flex items-center gap-2">
                    Learn More <ArrowRight size={14} />

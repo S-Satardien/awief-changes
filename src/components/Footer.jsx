@@ -44,14 +44,14 @@ export default function Footer() {
                 { Icon: Linkedin, url: "#", label: "LinkedIn" },
                 { Icon: Instagram, url: "#", label: "Instagram" },
                 { Icon: MessageCircle, url: "https://wa.me/27210206022", label: "WhatsApp" }
-              ].map((s, idx) => (
+              ].map(({ Icon, url, label }, idx) => (
                 <a 
                   key={idx} 
-                  href={s.url} 
+                  href={url} 
                   className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-brand transition-editorial border border-white/10 group"
-                  aria-label={s.label}
+                  aria-label={label}
                 >
-                  <s.Icon size={20} strokeWidth={1.5} className="group-hover:scale-110 transition-transform" />
+                  <Icon size={20} strokeWidth={1.5} className="group-hover:scale-110 transition-transform" />
                 </a>
               ))}
             </div>
