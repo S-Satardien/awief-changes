@@ -84,7 +84,7 @@ export default function Navbar({ activePage = '' }) {
                   { label: "ADVISORY BOARD", href: "/about#advisory-board" },
                   { label: "MEET THE TEAM", href: "/about#meet-the-team" },
                   { label: "OUR PARTNERS", href: "/about#our-partners" },
-                  { label: "ALUMNI NETWORK", href: "/alumni-network" }
+                  { label: "ALUMNI NETWORK", href: "/get-involved#join-community" }
                 ]}
               />
 
