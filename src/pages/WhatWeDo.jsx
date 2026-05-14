@@ -259,20 +259,20 @@ export default function WhatWeDo() {
                </div>
             </div>
 
-            {/* High Density Metrics - Spanning Full Width */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
+            {/* High Density Metrics - Spanning Full Width (Smaller Version) */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
                {[
                  { label: "Delegates", val: "1000+", icon: Users },
                  { label: "Countries in Attendance", val: "50+", icon: Globe },
                  { label: "Sectors Covered", val: "All", icon: Building2 },
                  { label: "Event Format", val: "Summit", icon: Presentation }
                ].map((m, i) => (
-                 <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 p-10 rounded-[40px] text-center group hover:bg-gold hover:text-brand transition-editorial cursor-default shadow-xl">
-                    <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-6 mx-auto group-hover:bg-brand group-hover:text-white transition-editorial">
-                       <m.icon size={24} />
+                 <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 p-6 rounded-[24px] text-center group hover:bg-gold hover:text-brand transition-editorial cursor-default shadow-lg">
+                    <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4 mx-auto group-hover:bg-brand group-hover:text-white transition-editorial">
+                       <m.icon size={20} />
                     </div>
-                    <p className="text-4xl md:text-5xl font-black text-white group-hover:text-brand transition-editorial mb-2 font-heading tracking-tighter">{m.val}</p>
-                    <p className="text-gold font-black text-[10px] uppercase tracking-[0.4em] group-hover:text-brand transition-editorial">{m.label}</p>
+                    <p className="text-2xl font-black text-white group-hover:text-brand transition-editorial mb-1 font-heading tracking-tighter">{m.val}</p>
+                    <p className="text-gold font-black text-[8px] uppercase tracking-[0.3em] group-hover:text-brand transition-editorial">{m.label}</p>
                  </div>
                ))}
             </div>
