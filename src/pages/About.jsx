@@ -303,18 +303,21 @@ export default function About() {
             Your unique journey has brought you here. Whether your passion is to build, invest, or advocate, there is a prioritized place for you in our vibrant community. Let’s lift each other up.
           </p>
           
-          <div className="grid md:grid-cols-3 gap-8 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
             {[
-              { id: "donor-partner", icon: HeartHandshake, title: "Donate & Partner", desc: "Provide crucial financial backing or become a strategic corporate partner driving real change.", link: "/get-involved#corporate-partner" },
-              { id: "volunteer", icon: Users, title: "Volunteer", desc: "Share your valuable time, technical expertise, and mentorship with early-stage founders.", link: "/get-involved#volunteer" },
-              { id: "join-community", icon: Globe, title: "Join the Community", desc: "Step into Africa's most powerful network of female leaders, innovators, and investors.", link: "/get-involved#join-community" }
+              { id: "donate", icon: HeartHandshake, title: "Donate", desc: "Provide crucial financial backing to sustain our empowerment programmes.", link: "/donate" },
+              { id: "partner", icon: Building2, title: "Partner", desc: "Become a strategic corporate partner or sponsor driving continent-wide systemic change.", link: "/get-involved#corporate-partner" },
+              { id: "volunteer", icon: Users, title: "Volunteer", desc: "Share your time and technical expertise to mentor early-stage female founders.", link: "/get-involved#volunteer" },
+              { id: "join-community", icon: Globe, title: "Join Community", desc: "Step into Africa's most powerful network of female leaders and innovators.", link: "/get-involved#join-community" }
             ].map((card) => (
-              <a href={card.link} key={card.id} className="bg-white/10 backdrop-blur-md p-10 rounded-[48px] border border-white/20 hover:border-gold transition-editorial group cursor-pointer hover:bg-white hover:shadow-2xl">
-                <div className="w-16 h-16 rounded-[20px] bg-white/20 flex items-center justify-center mb-8 group-hover:bg-brand/10 transition-editorial">
-                  <card.icon className="text-white group-hover:text-brand" size={32} strokeWidth={1.5} />
+              <a href={card.link} key={card.id} className="bg-white/10 backdrop-blur-md p-8 rounded-[40px] border border-white/20 hover:border-gold transition-editorial group cursor-pointer hover:bg-white hover:shadow-2xl flex flex-col justify-between">
+                <div>
+                  <div className="w-14 h-14 rounded-[16px] bg-white/20 flex items-center justify-center mb-6 group-hover:bg-brand/10 transition-editorial">
+                    <card.icon className="text-white group-hover:text-brand" size={28} strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-white font-black text-xl mb-4 uppercase font-heading group-hover:text-charcoal transition-editorial">{card.title}</h3>
+                  <p className="text-white/60 text-[13px] mb-8 leading-relaxed font-medium group-hover:text-charcoal/60 transition-editorial">{card.desc}</p>
                 </div>
-                <h3 className="text-white font-black text-2xl mb-4 uppercase font-heading group-hover:text-charcoal transition-editorial">{card.title}</h3>
-                <p className="text-white/60 text-sm mb-10 leading-relaxed font-medium group-hover:text-charcoal/60 transition-editorial">{card.desc}</p>
                 <div className="text-gold font-black text-[10px] tracking-widest uppercase flex items-center gap-3 group-hover:text-brand transition-editorial">
                   Take Action <ArrowRight size={14} />
                 </div>
