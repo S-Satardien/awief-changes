@@ -107,10 +107,10 @@ export default function Navbar({ activePage = '' }) {
                 label="GET INVOLVED" 
                 active="get-involved"
                 links={[
-                  { label: "INDIVIDUAL DONOR", href: "/get-involved#individual-donor" },
-                  { label: "CORPORATE PARTNER & CSI", href: "/get-involved#corporate-partner" },
-                  { label: "VOLUNTEER", href: "/get-involved#volunteer" },
-                  { label: "JOIN COMMUNITY", href: "/get-involved#join-community" }
+                  { label: "VOLUNTEER WITH AWIEF", href: "/get-involved#volunteer" },
+                  { label: "PARTNER WITH US", href: "/get-involved#corporate-partner" },
+                  { label: "DONATE", href: "/donate" },
+                  { label: "JOIN THE COMMUNITY", href: "/get-involved#join-community" }
                 ]}
               />
 
