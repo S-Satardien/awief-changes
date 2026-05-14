@@ -165,7 +165,7 @@ export default function WhatWeDo() {
                         {p.status}
                       </span>
                     </div>
-                    <h3 className="text-base font-black leading-tight group-hover:text-brand transition-editorial mb-1 truncate">{p.title}</h3>
+                    <h3 className="text-base font-black leading-tight group-hover:text-brand transition-editorial mb-1">{p.title}</h3>
                     <p className="text-charcoal/40 text-[11px] font-medium italic line-clamp-1">{p.desc}</p>
                   </div>
 
