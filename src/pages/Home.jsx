@@ -71,27 +71,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Redesigned Description Section - Editorial Excellence */}
-      <section className="bg-white py-32 px-8 relative overflow-hidden">
-        {/* Subtle decorative elements */}
-        <div className="absolute top-0 left-0 w-64 h-64 bg-brand/5 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2"></div>
+      {/* Refined Description Section */}
+      <section className="bg-white py-24 px-8 relative overflow-hidden">
         <div className="african-pattern absolute inset-0 opacity-[0.03] pointer-events-none"></div>
         
         <div className="max-w-[1400px] mx-auto relative z-10">
-          <div className="max-w-5xl md:mx-0">
-             <div className="flex items-start gap-8 flex-col md:flex-row">
-                <div className="w-20 h-[2px] bg-brand mt-6 shrink-0 hidden md:block"></div>
-                <div>
-                   <h2 className="text-charcoal/30 font-black tracking-[0.4em] uppercase text-[10px] mb-8">Mission Statement</h2>
-                   <p className="text-3xl md:text-5xl lg:text-6xl font-black uppercase font-heading leading-[1.05] tracking-tighter text-charcoal italic serif normal-case">
-                     Africa Women Innovation and Entrepreneurship Forum is a 
-                     <span className="text-brand"> non-profit</span>, award-winning 
-                     <span className="text-brand"> pan-African</span> organization dedicated to women's 
-                     <span className="text-brand"> economic empowerment</span>.
-                   </p>
-                </div>
-             </div>
-          </div>
+          <p className="text-xl md:text-3xl lg:text-4xl font-bold leading-[1.4] text-charcoal max-w-none md:text-left">
+            Africa Women Innovation and Entrepreneurship Forum is a 
+            non-profit, <span className="bg-brand text-white px-3 py-1 rounded-lg inline-block transition-all hover:scale-105 hover:shadow-xl cursor-default mx-1">award-winning</span> 
+            pan-African organization dedicated to <span className="bg-brand text-white px-4 py-1 rounded-lg inline-block transition-all hover:scale-105 hover:shadow-xl cursor-default mx-1">women's economic empowerment</span>.
+          </p>
         </div>
       </section>
 
