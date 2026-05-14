@@ -6,13 +6,15 @@ import {
   ShieldCheck, CreditCard, ArrowRight, Network, Briefcase, 
   Award, ArrowUpRight, X, ShoppingBag, ChevronRight, Zap, 
   Globe, HeartHandshake, Mic2, Users2, Rocket, Building2,
-  Plane, Hotel, Coffee, Presentation, Target, Lightbulb, TrendingUp
+  Plane, Hotel, Coffee, Presentation, Target, Lightbulb, TrendingUp,
+  Layout, Shield, User, Landmark, Fingerprint
 } from 'lucide-react'
 
 export default function PurchaseTickets() {
   const [selectedTicket, setSelectedTicket] = useState(null)
   const [showCart, setShowCart] = useState(false)
   const [activeDay, setActiveDay] = useState(1)
+  const [checkoutStep, setCheckoutStep] = useState(1)
 
   const tickets = [
     { 
@@ -78,6 +80,7 @@ export default function PurchaseTickets() {
   const handleSelect = (ticket) => {
     setSelectedTicket(ticket)
     setShowCart(true)
+    setCheckoutStep(1)
   }
 
   return (
@@ -138,23 +141,65 @@ export default function PurchaseTickets() {
         </div>
       </section>
 
-      {/* 2. INTRO & THEME */}
-      <section id="about-conference" className="py-16 px-6 md:px-12 bg-white">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-brand font-black tracking-[0.4em] uppercase text-[10px] mb-8">Where Africa’s entrepreneurship ecosystem connects</p>
-          <h2 className="text-4xl md:text-5xl font-black uppercase font-heading leading-tight mb-12">
-            Leading <span className="text-brand italic serif">Change</span>
-          </h2>
-          <div className="space-y-8 text-lg text-charcoal/70 font-medium italic leading-relaxed max-w-4xl mx-auto">
-            <p>
-              AWIEF returns in 2026 as Africa’s premier platform for women in entrepreneurship, leadership, and innovation — convening the continent’s most influential entrepreneurs, investors, corporates, policymakers, and ecosystem builders.
-            </p>
-            <p className="text-charcoal font-bold">
-              Under the theme <span className="text-brand">“Beyond Access: Owning Capital, Markets & Power,”</span> AWIEF2026 shifts the conversation from participation to ownership — exploring how women can move beyond access to resources toward greater control of capital, stronger market positioning, and influence in economic decision-making.
-            </p>
-            <p>
-              Bringing together a high-level conference and a dynamic exhibition, AWIEF2026 creates a powerful space where ideas, business, and opportunity meet. From thought-provoking discussions and practical insights to solution-driven showcases and strategic partnerships, the event is designed to accelerate collaboration, unlock new markets, and drive inclusive growth across Africa.
-            </p>
+      {/* 2. LEADING CHANGE - Enhanced Dynamic Layout */}
+      <section id="about-conference" className="py-24 px-6 md:px-12 bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -ml-48 -mb-48"></div>
+        
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
+            <div className="relative">
+              <div className="african-pattern absolute inset-0 opacity-[0.03] scale-150"></div>
+              <p className="text-brand font-black tracking-[0.4em] uppercase text-[10px] mb-8">Where Africa’s entrepreneurship ecosystem connects</p>
+              <h2 className="text-5xl md:text-7xl font-black uppercase font-heading leading-[0.9] tracking-tighter mb-12">
+                Leading <span className="text-brand italic serif">Change</span>
+              </h2>
+              <div className="space-y-8 relative z-10">
+                <div className="p-8 bg-warm rounded-[40px] border border-charcoal/5 shadow-sm hover:shadow-xl transition-editorial group">
+                  <p className="text-xl text-charcoal/70 font-medium italic leading-relaxed group-hover:text-charcoal transition-editorial">
+                    AWIEF returns in 2026 as Africa’s premier platform for women in entrepreneurship, leadership, and innovation — convening the continent’s most influential entrepreneurs, investors, corporates, policymakers, and ecosystem builders.
+                  </p>
+                </div>
+                
+                <div className="p-8 bg-brand text-white rounded-[40px] shadow-2xl relative overflow-hidden group">
+                  <div className="african-pattern absolute inset-0 opacity-10 scale-150 rotate-12"></div>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 bg-gold rounded-2xl flex items-center justify-center text-brand mb-6 shadow-xl group-hover:scale-110 transition-editorial">
+                      <Star size={24} />
+                    </div>
+                    <p className="text-2xl font-black uppercase font-heading leading-tight mb-4">
+                      Theme: Beyond Access
+                    </p>
+                    <p className="text-lg font-medium italic opacity-80">
+                      AWIEF2026 shifts the conversation from participation to ownership — exploring how women can move beyond access to resources toward greater control of capital, stronger market positioning, and influence in economic decision-making.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8">
+              <div className="aspect-square rounded-[60px] overflow-hidden shadow-2xl relative group mb-12">
+                <img 
+                  src="https://images.unsplash.com/photo-1551818255-e6e10975bc17?w=1000&q=80" 
+                  alt="Leadership" 
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-editorial duration-1000"
+                />
+                <div className="absolute inset-0 bg-brand/20 mix-blend-multiply opacity-60"></div>
+                <div className="absolute bottom-10 left-10 right-10 p-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-[40px] text-white">
+                  <p className="text-[10px] font-black uppercase tracking-[0.3em] text-gold mb-4">Strategy & Vision</p>
+                  <p className="text-base font-medium italic leading-relaxed">
+                    Bringing together a high-level conference and a dynamic exhibition, AWIEF2026 creates a powerful space where ideas, business, and opportunity meet.
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-8 border-2 border-dashed border-brand/20 rounded-[40px] bg-brand/5 group hover:bg-brand/10 transition-editorial">
+                <p className="text-sm text-brand font-medium italic leading-relaxed">
+                  From thought-provoking discussions and practical insights to solution-driven showcases and strategic partnerships, the event is designed to accelerate collaboration, unlock new markets, and drive inclusive growth across Africa.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -470,30 +515,148 @@ export default function PurchaseTickets() {
          </div>
       </section>
 
-      {/* Cart Popup */}
+      {/* CartFlows Styled Checkout Portal */}
       {showCart && selectedTicket && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center p-6">
-           <div className="absolute inset-0 bg-charcoal/90 backdrop-blur-xl animate-in fade-in duration-500" onClick={() => setShowCart(false)}></div>
-           <div className="bg-white w-full max-w-4xl rounded-[48px] relative z-10 shadow-2xl overflow-hidden animate-in slide-in-from-bottom-24 duration-700">
-              <div className="grid md:grid-cols-12">
-                 <div className="md:col-span-5 bg-brand p-12 text-white relative">
-                    <div className="african-pattern absolute inset-0 opacity-20 scale-150"></div>
-                    <div className="relative z-10">
-                       <ShoppingBag size={48} className="text-gold mb-8" />
-                       <h3 className="text-3xl font-black uppercase font-heading leading-tight mb-10">Secure <br/> <span className="text-gold">Your Seat</span></h3>
-                       <div className="space-y-6 pt-8 border-t border-white/10 text-sm">
-                          <div className="flex justify-between items-center"><span className="opacity-40 uppercase">Pass</span><span>{selectedTicket.name}</span></div>
-                          <div className="flex justify-between items-center"><span className="opacity-40 uppercase">Total</span><span className="text-4xl font-black text-gold">{selectedTicket.price}</span></div>
+        <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-12">
+           <div className="absolute inset-0 bg-charcoal/95 backdrop-blur-2xl animate-in fade-in duration-500" onClick={() => setShowCart(false)}></div>
+           <div className="bg-white w-full max-w-6xl rounded-[40px] md:rounded-[64px] relative z-10 shadow-[0_50px_150px_rgba(0,0,0,0.5)] overflow-hidden animate-in slide-in-from-bottom-24 duration-700 flex flex-col md:flex-row min-h-[80vh]">
+              
+              {/* Left Side: CartFlows Sidebar - Summary */}
+              <div className="w-full md:w-[40%] bg-warm p-12 md:p-20 relative flex flex-col justify-between overflow-hidden border-r border-charcoal/5">
+                 <div className="african-pattern absolute inset-0 opacity-[0.03] scale-150"></div>
+                 <div className="relative z-10">
+                    <button onClick={() => setShowCart(false)} className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-brand/40 hover:text-brand transition-editorial mb-16">
+                      <ArrowRight size={14} className="rotate-180" /> Back to Passes
+                    </button>
+                    
+                    <div className="mb-12">
+                       <p className="text-brand font-black text-[9px] uppercase tracking-[0.4em] mb-4">Registration Summary</p>
+                       <h3 className="text-4xl font-black uppercase font-heading leading-tight mb-8">AWIEF2026 <br/> <span className="text-brand italic serif">Summit</span></h3>
+                       
+                       <div className="p-8 bg-white rounded-[32px] border border-charcoal/5 shadow-sm">
+                          <div className="flex justify-between items-center mb-6">
+                             <div>
+                                <h4 className="text-sm font-black uppercase">{selectedTicket.name}</h4>
+                                <p className="text-[10px] text-charcoal/40 font-medium italic">General Admission</p>
+                             </div>
+                             <span className="text-2xl font-black text-brand">{selectedTicket.price}</span>
+                          </div>
+                          <div className="space-y-3 pt-6 border-t border-charcoal/5">
+                             <div className="flex justify-between text-[10px] font-black uppercase tracking-widest opacity-40"><span>Subtotal</span><span>{selectedTicket.price}</span></div>
+                             <div className="flex justify-between text-[10px] font-black uppercase tracking-widest opacity-40"><span>Processing Fee</span><span>$0.00</span></div>
+                             <div className="flex justify-between text-lg font-black uppercase tracking-widest text-brand pt-4"><span>Total Due</span><span>{selectedTicket.price}</span></div>
+                          </div>
+                       </div>
+                    </div>
+
+                    <div className="space-y-4">
+                       <div className="flex items-center gap-4 text-brand/40">
+                          <ShieldCheck size={20} />
+                          <p className="text-[9px] font-black uppercase tracking-widest leading-relaxed">Secure 256-bit SSL encrypted checkout powered by CartFlows & Stripe</p>
                        </div>
                     </div>
                  </div>
-                 <div className="md:col-span-7 p-12 bg-white flex flex-col justify-center">
-                    <button onClick={() => setShowCart(false)} className="absolute top-10 right-10 w-12 h-12 rounded-full bg-cream flex items-center justify-center hover:bg-brand hover:text-white transition-editorial"><X size={24} /></button>
-                    <div className="max-w-sm mx-auto w-full">
-                       <h4 className="text-xl font-black uppercase font-heading mb-8">Checkout</h4>
-                       <button className="w-full bg-brand text-white py-6 rounded-2xl font-black text-[9px] uppercase tracking-[0.3em] hover:bg-charcoal transition-editorial shadow-xl">COMPLETE REGISTRATION</button>
-                    </div>
+
+                 <div className="relative z-10 pt-12 flex items-center gap-6 opacity-30 grayscale scale-90 origin-left">
+                    <div className="h-6 w-16 bg-charcoal/20 rounded"></div>
+                    <div className="h-6 w-16 bg-charcoal/20 rounded"></div>
+                    <div className="h-6 w-16 bg-charcoal/20 rounded"></div>
                  </div>
+              </div>
+
+              {/* Right Side: CartFlows Form & Steps */}
+              <div className="w-full md:w-[60%] bg-white p-12 md:p-20 flex flex-col relative overflow-y-auto">
+                 {/* Progress Bar */}
+                 <div className="flex justify-between items-center mb-16 relative">
+                    <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-warm -translate-y-1/2 z-0"></div>
+                    <div className="absolute top-1/2 left-0 h-0.5 bg-brand -translate-y-1/2 z-0 transition-all duration-700" style={{ width: `${(checkoutStep - 1) * 50}%` }}></div>
+                    {[
+                      { icon: <User size={14}/>, label: "Info" },
+                      { icon: <Landmark size={14}/>, label: "Payment" },
+                      { icon: <Fingerprint size={14}/>, label: "Verify" }
+                    ].map((step, i) => (
+                      <div key={i} className="relative z-10 flex flex-col items-center gap-3">
+                        <div className={`w-10 h-10 rounded-full border-2 flex items-center justify-center transition-editorial duration-500 ${checkoutStep > i + 1 ? 'bg-brand border-brand text-white' : checkoutStep === i + 1 ? 'bg-brand border-brand text-white shadow-xl scale-110' : 'bg-white border-charcoal/10 text-charcoal/20'}`}>
+                          {checkoutStep > i + 1 ? <CheckCircle2 size={16}/> : step.icon}
+                        </div>
+                        <span className={`text-[8px] font-black uppercase tracking-[0.2em] ${checkoutStep >= i + 1 ? 'text-brand' : 'text-charcoal/20'}`}>{step.label}</span>
+                      </div>
+                    ))}
+                 </div>
+
+                 <div className="flex-grow flex flex-col justify-center max-w-md mx-auto w-full">
+                    {checkoutStep === 1 && (
+                      <div className="animate-in fade-in slide-in-from-right-8 duration-500">
+                         <h4 className="text-2xl font-black uppercase font-heading mb-10 flex items-center gap-4">
+                           <Users2 size={28} className="text-brand" /> Personal Details
+                         </h4>
+                         <div className="space-y-6 mb-12">
+                            <div className="grid grid-cols-2 gap-6">
+                               <input type="text" placeholder="First Name" className="w-full bg-warm/50 border border-charcoal/5 px-6 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest focus:border-brand focus:outline-none transition-editorial" />
+                               <input type="text" placeholder="Last Name" className="w-full bg-warm/50 border border-charcoal/5 px-6 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest focus:border-brand focus:outline-none transition-editorial" />
+                            </div>
+                            <input type="email" placeholder="Email Address" className="w-full bg-warm/50 border border-charcoal/5 px-6 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest focus:border-brand focus:outline-none transition-editorial" />
+                            <input type="text" placeholder="Organization" className="w-full bg-warm/50 border border-charcoal/5 px-6 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest focus:border-brand focus:outline-none transition-editorial" />
+                         </div>
+                         <button onClick={() => setCheckoutStep(2)} className="w-full bg-brand text-white py-7 rounded-[32px] font-black text-[10px] uppercase tracking-[0.4em] hover:bg-charcoal hover:shadow-2xl transition-editorial shadow-xl flex items-center justify-center gap-4 group">
+                            Next Step <ArrowRight size={18} className="group-hover:translate-x-2 transition-editorial" />
+                         </button>
+                      </div>
+                    )}
+
+                    {checkoutStep === 2 && (
+                      <div className="animate-in fade-in slide-in-from-right-8 duration-500">
+                         <h4 className="text-2xl font-black uppercase font-heading mb-10 flex items-center gap-4">
+                           <CreditCard size={28} className="text-brand" /> Payment Method
+                         </h4>
+                         <div className="grid grid-cols-2 gap-4 mb-10">
+                            <div className="p-6 border-2 border-brand bg-brand/5 rounded-[24px] text-center cursor-pointer">
+                               <CreditCard size={24} className="text-brand mx-auto mb-3" />
+                               <span className="text-[9px] font-black uppercase tracking-widest text-brand">Credit Card</span>
+                            </div>
+                            <div className="p-6 border border-charcoal/5 rounded-[24px] text-center opacity-40 hover:opacity-100 transition-editorial cursor-pointer">
+                               <Landmark size={24} className="text-charcoal mx-auto mb-3" />
+                               <span className="text-[9px] font-black uppercase tracking-widest">Bank Transfer</span>
+                            </div>
+                         </div>
+                         <div className="space-y-6 mb-12">
+                            <input type="text" placeholder="Card Number" className="w-full bg-warm/50 border border-charcoal/5 px-6 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest focus:border-brand focus:outline-none transition-editorial" />
+                            <div className="grid grid-cols-2 gap-6">
+                               <input type="text" placeholder="MM/YY" className="w-full bg-warm/50 border border-charcoal/5 px-6 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest focus:border-brand focus:outline-none transition-editorial" />
+                               <input type="text" placeholder="CVC" className="w-full bg-warm/50 border border-charcoal/5 px-6 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest focus:border-brand focus:outline-none transition-editorial" />
+                            </div>
+                         </div>
+                         <div className="flex gap-4">
+                            <button onClick={() => setCheckoutStep(1)} className="w-20 h-20 rounded-full border border-charcoal/5 flex items-center justify-center hover:bg-warm transition-editorial">
+                               <ArrowRight size={24} className="rotate-180" />
+                            </button>
+                            <button onClick={() => setCheckoutStep(3)} className="flex-grow bg-brand text-white py-7 rounded-[32px] font-black text-[10px] uppercase tracking-[0.4em] hover:bg-charcoal hover:shadow-2xl transition-editorial shadow-xl">
+                               Pay {selectedTicket.price}
+                            </button>
+                         </div>
+                      </div>
+                    )}
+
+                    {checkoutStep === 3 && (
+                      <div className="text-center animate-in zoom-in duration-500">
+                         <div className="w-24 h-24 bg-brand/5 border-2 border-brand rounded-full flex items-center justify-center text-brand mx-auto mb-10 shadow-2xl">
+                            <Zap size={48} className="animate-pulse" />
+                         </div>
+                         <h4 className="text-4xl font-black uppercase font-heading mb-6 tracking-tighter">Nearly There!</h4>
+                         <p className="text-lg text-charcoal/40 font-medium italic mb-12 leading-relaxed">
+                           We are finalizing your secure transaction. Please do not close this window or refresh the page.
+                         </p>
+                         <div className="w-full h-2 bg-warm rounded-full overflow-hidden mb-8">
+                            <div className="h-full bg-brand animate-[loading_3s_ease-in-out_infinite]"></div>
+                         </div>
+                         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-brand/40 animate-pulse">Processing Order...</p>
+                      </div>
+                    )}
+                 </div>
+
+                 <p className="text-center mt-auto text-[8px] font-black text-charcoal/20 uppercase tracking-[0.3em] pt-12">
+                   Secure Portal • Verified by CartFlows 2.0
+                 </p>
               </div>
            </div>
         </div>
