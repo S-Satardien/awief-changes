@@ -10,8 +10,8 @@ const programmesData = [
     stage: "Growth & Scale",
     status: "Open",
     color: "bg-brand",
-    desc: "A 12-month accelerator targeting women-owned SMEs in Nigeria to make them credit and investment-ready.",
-    details: "Partnered with African Guarantee Fund (AGF) and FSDH Merchant Bank Limited. Focuses on post-revenue, highly innovative businesses operating for 3+ years. Provides tailored business development, mentorship, and increased creditworthiness."
+    desc: "A 12-month accelerator targeting women-owned SMEs in Nigeria.",
+    details: "Partnered with African Guarantee Fund (AGF) and FSDH Merchant Bank Limited. Focuses on post-revenue, highly innovative businesses operating for 3+ years."
   },
   {
     id: 2,
@@ -19,8 +19,8 @@ const programmesData = [
     stage: "Growth & Scale",
     status: "Ongoing",
     color: "bg-accent",
-    desc: "A flagship enterprise development programme enhancing the investment readiness of South African female founders.",
-    details: "For the 2024 cohort, AWIEF and Nedbank are supporting Exempt Micro Enterprises (EMEs) or Qualifying Small Enterprises (QSEs) operating in agribusiness, agro-processing, and green energy."
+    desc: "Enhancing the investment readiness of South African female founders.",
+    details: "For the 2024 cohort, supporting Exempt Micro Enterprises (EMEs) or Qualifying Small Enterprises (QSEs) in agribusiness and green energy."
   },
   {
     id: 3,
@@ -28,8 +28,8 @@ const programmesData = [
     stage: "Growth & Scale",
     status: "Closed",
     color: "bg-charcoal",
-    desc: "A seven-month, high-impact, investment readiness programme for innovative female-led businesses.",
-    details: "Launched as part of Victoria's Secret 'The Tour Impact Fund'. Priority is given to technology-based businesses in agriculture, health, and renewable energy."
+    desc: "High-impact investment readiness for innovative female-led businesses.",
+    details: "Part of Victoria's Secret 'The Tour Impact Fund'. Priority for technology-based businesses in agriculture and health."
   },
   {
     id: 4,
@@ -37,8 +37,44 @@ const programmesData = [
     stage: "Idea & Launch",
     status: "Closed",
     color: "bg-brand-light",
-    desc: "Empowering 100 young women entrepreneurs across Lesotho, Eswatini, and South Africa.",
-    details: "Supported by the U.S. Mission and Arizona State University. Focuses on early-stage entrepreneurs (1-3 years) using the 100 Million Learners online curriculum."
+    desc: "Empowering 100 young women entrepreneurs across Lesotho and South Africa.",
+    details: "Supported by the U.S. Mission. Focuses on early-stage entrepreneurs using the 100 Million Learners curriculum."
+  },
+  {
+    id: 5,
+    title: "She-Commes: Digital Trade for Women in Africa",
+    stage: "Idea & Launch",
+    status: "Open",
+    color: "bg-brand",
+    desc: "Training on e-commerce and cross-border digital trade.",
+    details: "Empowering women to leverage AfCFTA through digital platforms and global marketplaces."
+  },
+  {
+    id: 6,
+    title: "Green Energy Innovation Challenge",
+    stage: "Growth & Scale",
+    status: "Ongoing",
+    color: "bg-accent",
+    desc: "Funding and support for women-led renewable energy startups.",
+    details: "Accelerating the transition to sustainable energy across sub-Saharan Africa."
+  },
+  {
+    id: 7,
+    title: "Agribusiness Value Chain Development",
+    stage: "Idea & Launch",
+    status: "Closed",
+    color: "bg-charcoal",
+    desc: "Building sustainable food systems through female leadership.",
+    details: "Focusing on processing, storage, and logistics within the agricultural sector."
+  },
+  {
+    id: 8,
+    title: "Creative Industry Export Readiness",
+    stage: "Growth & Scale",
+    status: "Open",
+    color: "bg-brand-light",
+    desc: "Preparing fashion and arts brands for international markets.",
+    details: "Direct mentorship from global luxury brands and supply chain experts."
   }
 ];
 
@@ -82,9 +118,9 @@ export default function WhatWeDo() {
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-2xl">
-              <p className="text-brand font-black tracking-[0.3em] uppercase text-[10px] mb-4 italic">Capacity Building</p>
-              <h2 className="text-4xl md:text-6xl font-black uppercase font-heading tracking-tighter leading-none">Tailored <span className="text-brand">Programmes</span></h2>
-              <p className="text-charcoal/50 text-lg mt-6 font-medium">Empowering women with the tools and networks they need to succeed at every stage.</p>
+              <p className="text-brand font-black tracking-[0.3em] uppercase text-[10px] mb-4 italic">Capacity Building & Enterprise Development</p>
+              <h2 className="text-4xl md:text-6xl font-black uppercase font-heading tracking-tighter leading-none">TAILORED <span className="text-brand">PROGRAMMES</span></h2>
+              <p className="text-charcoal/50 text-lg mt-6 font-medium">Providing knowledge, tools, and connections to succeed at every stage.</p>
             </div>
             
             {/* Filter Bar */}
@@ -105,38 +141,36 @@ export default function WhatWeDo() {
             </div>
           </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-4">
               {filteredProgrammes.map((p, i) => (
                 <div 
                   key={p.id} 
                   onClick={() => setSelectedProg(p)}
-                  className="bg-white border border-charcoal/5 p-12 rounded-[48px] group hover:border-brand hover:shadow-[0_40px_100px_rgba(0,0,0,0.05)] transition-editorial cursor-pointer flex flex-col h-full relative overflow-hidden group"
+                  className="bg-white border border-charcoal/5 p-6 rounded-[32px] group hover:border-brand hover:shadow-xl transition-editorial cursor-pointer flex flex-row items-center gap-6 relative overflow-hidden h-auto"
                 >
                   <div className="african-pattern absolute inset-0 opacity-0 group-hover:opacity-[0.05] transition-editorial"></div>
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="flex justify-between items-start mb-10">
-                      <div className="w-16 h-16 rounded-[24px] bg-warm flex items-center justify-center text-brand shrink-0 group-hover:bg-brand group-hover:text-white group-hover:rotate-12 transition-editorial shadow-sm">
-                        {p.stage.includes('Idea') ? <Rocket size={28} /> : <TrendingUp size={28} />}
-                      </div>
-                      <span className={`px-5 py-2 rounded-full text-[9px] font-black uppercase tracking-widest shadow-sm ${
-                        p.status === 'Open' ? 'bg-green-100 text-green-700 border border-green-200' :
-                        p.status === 'Ongoing' ? 'bg-gold/10 text-gold border border-gold/20' :
-                        'bg-charcoal/5 text-charcoal/40 border border-charcoal/10'
+                  
+                  <div className="relative z-10 w-16 h-16 rounded-[20px] bg-warm flex items-center justify-center text-brand shrink-0 group-hover:bg-brand group-hover:text-white transition-editorial shadow-sm">
+                    {p.stage.includes('Idea') ? <Rocket size={24} /> : <TrendingUp size={24} />}
+                  </div>
+
+                  <div className="relative z-10 flex-grow min-w-0">
+                    <div className="flex justify-between items-center mb-2">
+                       <span className="text-brand font-black tracking-[0.15em] uppercase text-[8px] truncate">{p.stage}</span>
+                       <span className={`px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest ${
+                        p.status === 'Open' ? 'bg-green-100 text-green-700' :
+                        p.status === 'Ongoing' ? 'bg-gold/10 text-gold' :
+                        'bg-charcoal/5 text-charcoal/40'
                       }`}>
                         {p.status}
                       </span>
                     </div>
-                    <div className="mb-8">
-                      <div className="flex items-center gap-2 mb-3">
-                         <div className="w-6 h-px bg-gold"></div>
-                         <span className="text-brand font-black tracking-[0.2em] uppercase text-[9px]">{p.stage}</span>
-                      </div>
-                      <h3 className="text-3xl font-black uppercase font-heading leading-[1.1] group-hover:text-brand transition-editorial tracking-tight">{p.title}</h3>
-                    </div>
-                    <p className="text-charcoal/40 text-sm font-medium leading-relaxed mb-12 flex-grow italic">"{p.desc}"</p>
-                    <div className="flex items-center gap-4 text-brand font-black tracking-[0.3em] uppercase text-[10px] group-hover:gap-6 transition-editorial mt-auto">
-                      VIEW PROGRAMME <MoveRight size={18} className="group-hover:translate-x-2 transition-editorial text-gold" />
-                    </div>
+                    <h3 className="text-base font-black leading-tight group-hover:text-brand transition-editorial mb-1 truncate">{p.title}</h3>
+                    <p className="text-charcoal/40 text-[11px] font-medium italic line-clamp-1">{p.desc}</p>
+                  </div>
+
+                  <div className="relative z-10 shrink-0 opacity-0 group-hover:opacity-100 transition-editorial translate-x-4 group-hover:translate-x-0">
+                    <MoveRight size={20} className="text-gold" />
                   </div>
                 </div>
               ))}
