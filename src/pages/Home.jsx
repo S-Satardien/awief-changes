@@ -183,7 +183,48 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Latest Insights Section */}
+      {/* Strategic Partners Section - Clean & High Impact */}
+      <section className="py-24 px-8 bg-warm">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-brand font-black tracking-[0.4em] uppercase text-[10px] mb-4">An Ecosystem of Change</p>
+            <h2 className="text-4xl md:text-5xl font-black uppercase font-heading text-charcoal">Our Strategic <span className="text-brand italic serif normal-case">Partners</span></h2>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 md:gap-8">
+            {[
+              { name: "UN Women", url: "https://www.unwomen.org", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/UN_Women_logo.svg/1200px-UN_Women_logo.svg.png" },
+              { name: "African Union", url: "https://au.int", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/51/AU_Logo.svg/1200px-AU_Logo.svg.png" },
+              { name: "Nedbank", url: "https://www.nedbank.co.za", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nedbank_logo.svg/1200px-Nedbank_logo.svg.png" },
+              { name: "Victoria's Secret", url: "https://www.victoriassecret.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Victoria%27s_Secret_logo.svg/2560px-Victoria%27s_Secret_logo.svg.png" },
+              { name: "African Guarantee Fund", url: "https://africanguaranteefund.com", logo: "https://africanguaranteefund.com/wp-content/uploads/2019/06/agf-logo.png" },
+              { name: "FSDH Merchant Bank", url: "https://www.fsdhmerchantbank.com", logo: "https://fsdhmerchantbank.com/images/fsdh_logo.png" },
+              { name: "U.S. Mission", url: "https://www.state.gov", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png" },
+              { name: "European Union", url: "https://european-union.europa.eu", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1200px-Flag_of_Europe.svg.png" }
+            ].map((partner, i) => (
+              <a 
+                href={partner.url} 
+                key={i} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="group bg-white p-8 md:p-12 rounded-[32px] border border-charcoal/5 flex items-center justify-center hover:border-brand hover:shadow-2xl transition-editorial h-32 md:h-40"
+              >
+                <img 
+                  src={partner.logo} 
+                  alt={partner.name} 
+                  className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-editorial duration-500 scale-90 group-hover:scale-100" 
+                />
+              </a>
+            ))}
+          </div>
+
+          <div className="mt-16 text-center">
+             <a href="/about#our-partners" className="text-charcoal/40 font-black hover:text-brand flex items-center justify-center gap-4 text-[10px] uppercase tracking-widest transition-editorial">
+               View All Institutional Partners <ArrowRight size={18}/>
+             </a>
+          </div>
+        </div>
+      </section>
       <section className="section-spacing px-6 md:px-12 bg-white">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-8 gap-8">
