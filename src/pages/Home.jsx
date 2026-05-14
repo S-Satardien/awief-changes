@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { ArrowRight, Play, Globe, Sparkles, Calendar, FileText, Users, BookOpen, Quote } from 'lucide-react'
+import { ArrowRight, Play, Globe, Sparkles, Calendar, FileText, Users, BookOpen, Quote, TrendingUp, Award } from 'lucide-react'
 
 export default function Home() {
   return (
@@ -87,25 +87,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Asymmetrical Action Section */}
+      {/* AWIEF Pillars Section */}
       <section className="section-spacing px-6 md:px-12 bg-white mt-12">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-8">
             <div className="max-w-2xl">
-              <p className="text-brand font-black tracking-[0.3em] uppercase text-xs mb-4">Our Ecosystem</p>
+              <p className="text-brand font-black tracking-[0.3em] uppercase text-xs mb-4">Our Keys to Success</p>
               <h2 className="text-4xl md:text-6xl font-black uppercase font-heading leading-[0.9] tracking-tighter">
-                Accelerating <br/> Impact at <span className="text-brand">Scale</span>
+                We facilitate, support, and <span className="text-brand">inspire</span>
               </h2>
             </div>
             <p className="text-charcoal/50 font-bold text-sm max-w-sm md:text-right">
-              Join a movement that spans 48 African nations, providing direct access to mentorship, capital, and markets.
+              We empower women entrepreneurs by providing knowledge, tools, resources, and valuable connections.
             </p>
-          </div>            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: Calendar, title: "Summits", label: "Attend", desc: "Connect with global leaders and influencers at our flagship events and summits.", bg: "bg-brand/5", link: "/purchase-conference-tickets" },
-              { icon: FileText, title: "Programmes", label: "Apply", desc: "Access mentorship, training, and resources through our tailored accelerator and development programs.", bg: "bg-berry/5", link: "/what-we-do#programmes" },
-              { icon: Users, title: "Partnerships", label: "Partner", desc: "Collaborate with forward-thinking organizations to drive real systemic change.", bg: "bg-charcoal/5", link: "/get-involved#corporate-partner" },
-              { icon: BookOpen, title: "Resources", label: "Learn", desc: "Access our exclusive database of reports, training, and research on women's empowerment.", bg: "bg-brand-light/5", link: "/what-we-do#advocacy" },
+              { icon: TrendingUp, title: "ENTERPRISE DEVELOPMENT", label: "Build", desc: "Innovative products for enabling ecosystems.", bg: "bg-brand/5", link: "/what-we-do" },
+              { icon: Globe, title: "ANNUAL CONFERENCE", label: "Connect", desc: "World-class networking and pan-African exhibitions.", bg: "bg-berry/5", link: "/what-we-do#conference" },
+              { icon: Award, title: "AWIEF AWARDS", label: "Recognize", desc: "Recognizing outstanding female achievement.", bg: "bg-charcoal/5", link: "/what-we-do#awards" },
+              { icon: BookOpen, title: "POLICY ADVOCACY", label: "Impact", desc: "Cross-cutting advocacy for gender equality.", bg: "bg-brand-light/5", link: "/what-we-do#advocacy" },
             ].map((item, i) => (
               <a href={item.link} key={i} className={`p-10 rounded-[32px] ${item.bg} group hover:bg-brand transition-editorial h-auto flex flex-col justify-between cursor-pointer border border-transparent hover:shadow-2xl`}>
                 <div>
@@ -113,11 +114,11 @@ export default function Home() {
                     <item.icon size={32} strokeWidth={1.5} />
                   </div>
                   <p className="text-[10px] font-black tracking-widest uppercase mb-2 group-hover:text-white/70">{item.label}</p>
-                  <h3 className="text-3xl font-black uppercase font-heading group-hover:text-white mb-4">{item.title}</h3>
+                  <h3 className="text-2xl font-black uppercase font-heading group-hover:text-white mb-4 leading-tight">{item.title}</h3>
                   <p className="text-charcoal/50 text-sm font-medium leading-relaxed group-hover:text-white/70 transition-editorial">{item.desc}</p>
                 </div>
                 <div className="mt-8 text-brand font-black tracking-widest text-[10px] uppercase group-hover:text-white transition-editorial flex items-center gap-2">
-                   Explore <ArrowRight size={14} />
+                   Learn More <ArrowRight size={14} />
                 </div>
               </a>
             ))}
