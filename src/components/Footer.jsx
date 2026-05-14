@@ -76,9 +76,9 @@ export default function Footer() {
           </div>
 
           {/* Column 3: Social (Middle) */}
-          <div className="text-center md:text-left">
+          <div className="flex flex-col items-center text-center">
             <h4 className="text-gold font-black mb-8 text-[10px] tracking-[0.3em] uppercase">Connect With Us</h4>
-            <div className="flex gap-4 justify-center md:justify-start flex-wrap">
+            <div className="flex gap-4 justify-center">
               {socialIcons.map((s, idx) => (
                 <SocialIcon key={idx} {...s} />
               ))}
