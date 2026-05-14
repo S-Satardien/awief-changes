@@ -258,18 +258,7 @@ export default function OurImpact() {
         </div>
       </section>
 
-      {/* Brand Marquee - Impact focus */}
-      <section className="py-24 bg-brand overflow-hidden">
-        <div className="flex whitespace-nowrap animate-marquee">
-          {[1,2,3,4].map(i => (
-            <div key={i} className="flex items-center">
-              <span className="text-[6rem] md:text-[10rem] font-black text-white/20 uppercase tracking-tighter px-12">Shaping</span>
-              <span className="text-[6rem] md:text-[10rem] font-black text-white uppercase tracking-tighter px-12 italic">Economic</span>
-              <span className="text-[6rem] md:text-[10rem] font-black text-white/20 uppercase tracking-tighter px-12">Growth</span>
-            </div>
-          ))}
-        </div>
-      </section>
+
 
       <Footer />
     </div>
