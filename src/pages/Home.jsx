@@ -139,22 +139,22 @@ export default function Home() {
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  q: "AWIEF gave me the tools, the network, and the courage to scale beyond borders. We are stronger together.",
+                  q: "The AWIEF Growth Accelerator provided exactly what my business needed at a critical stage. The investment readiness training and mentorship were game-changers.",
+                  n: "Kedibone Tsiloane",
+                  t: "Programmes Alumna",
+                  i: "photo-1573497019940-1c28c88b4f3e"
+                },
+                {
+                  q: "Attending the Annual AWIEF Conference opened doors to global markets and international investors. It is truly the nexus of African innovation.",
                   n: "Sarah Adebayo",
-                  t: "CEO, InnovateAfrica",
+                  t: "Conference Delegate",
                   i: "photo-1531123897727-8f129e1688ce"
                 },
                 {
-                  q: "The mentorship I received transformed my approach to tech innovation. AWIEF is a catalyst for African founders.",
-                  n: "Fatima Yusuf",
-                  t: "Founder, GreenTech Nigeria",
-                  i: "photo-1573496359142-b8d87734a5a2"
-                },
-                {
-                  q: "Being part of this pan-African network opened doors to global markets that I never thought possible.",
-                  n: "Elena Mensah",
-                  t: "Director, Accra Logistics",
-                  i: "photo-1567532939604-b6b5b0ad2604"
+                  q: "Winning an AWIEF Award was a moment of profound recognition for our work. It highlighted the ingenuity and resilience of female founders to a global audience.",
+                  n: "Aletha Sphere",
+                  t: "AWIEF Awards Winner",
+                  i: "photo-1589156191108-c7ea6f28f97b"
                 }
               ].map((item, idx) => (
                 <div key={idx} className="glass-panel p-10 rounded-[48px] border border-white/10 hover:border-gold transition-editorial group">
