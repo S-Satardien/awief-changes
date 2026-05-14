@@ -7,7 +7,7 @@ import {
   Award, ArrowUpRight, X, ShoppingBag, ChevronRight, Zap, 
   Globe, HeartHandshake, Mic2, Users2, Rocket, Building2,
   Plane, Hotel, Coffee, Presentation, Target, Lightbulb, TrendingUp,
-  Layout, Shield, User, Landmark, Fingerprint
+  Layout, Shield, User, Landmark, Fingerprint, Quote, Play
 } from 'lucide-react'
 
 export default function PurchaseTickets() {
@@ -77,6 +77,54 @@ export default function PurchaseTickets() {
     ]
   }
 
+  const testimonials = [
+    {
+      text: "The conference creates a powerful space to connect, share knowledge, and align our efforts towards economic empowerment. The sessions were enlightening, offering fresh perspectives and showcasing the strength of collaboration among women. I’ll definitely be back.",
+      author: "Anatolia",
+      role: "Kenya Delegate"
+    },
+    {
+      text: "What I like about AWIEF is its strong focus on fostering entrepreneurship and driving innovation, which is key to shaping the future of our economies.",
+      author: "Naledi Pandor",
+      role: "Former Minister of International Relations and Cooperation, South Africa"
+    },
+    {
+      text: "AWIEF has significantly impacted policy dialogue across Africa and is well-positioned to tackle future challenges in sustainable development and inclusive growth.",
+      author: "Michael B. O'Sullivan",
+      role: "World Bank, US Speaker"
+    },
+    {
+      text: "Entrepreneurship is the backbone of Africa’s economic growth, and forums like AWIEF are where resilience, innovation, and opportunity come together to drive real change for women across the continent.",
+      author: "Dr. Gloria Kiondo",
+      role: "Deputy Resident Representative, UNDP South Africa"
+    },
+    {
+      text: "Events like AWIEF bring together private sector leaders, government, policymakers, and entrepreneurs to unlock real opportunities for women and youth, and to turn Africa’s prosperity potential into reality.",
+      author: "Ashleigh Theophanides",
+      role: "Chief Strategy Officer, Deloitte Africa"
+    },
+    {
+      text: "AWIEF is a critical platform for bringing together women from across the African continent to share experiences, discuss barriers, and explore what we can scale up to drive real growth for women entrepreneurs",
+      author: "Dr. Vera Kamtukule",
+      role: "Former Minister of Tourism, Malawi"
+    },
+    {
+      text: "AWIEF provided an incredible platform to showcase our eco-friendly bamboo toothbrush and connect with like-minded entrepreneurs and innovators. The level of excellence on display was truly inspiring — it challenged us to elevate our own product and presentation. We would absolutely return.",
+      author: "Saliya Kaunda",
+      role: "Dazzling Dental, Zambia Exhibitor"
+    },
+    {
+      text: "The AWIEF Conference is a key event of the year, bringing together stakeholders and decision-makers from across Africa. It provides a platform to discuss critical issues and support SMEs.",
+      author: "Nirmala Reddy",
+      role: "Strategy Specialist, Enterprise and Supplier Development, Nedbank South Africa"
+    },
+    {
+      text: "AWIEF’s masterclasses and workshops deliver practical insights and skills that drive youth development, entrepreneurship, and community impact.",
+      author: "Khosi Mayekiso",
+      role: "Department of Trade and Industry, South Africa"
+    }
+  ]
+
   const handleSelect = (ticket) => {
     setSelectedTicket(ticket)
     setShowCart(true)
@@ -141,11 +189,8 @@ export default function PurchaseTickets() {
         </div>
       </section>
 
-      {/* 2. LEADING CHANGE - Enhanced Dynamic Layout */}
-      <section id="about-conference" className="py-24 px-6 md:px-12 bg-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand/5 rounded-full blur-3xl -mr-48 -mt-48"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -ml-48 -mb-48"></div>
-        
+      {/* 2. LEADING CHANGE */}
+      <section id="about-conference" className="py-16 px-6 md:px-12 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
@@ -315,9 +360,6 @@ export default function PurchaseTickets() {
               </div>
             ))}
           </div>
-          <p className="text-center mt-12 text-[9px] font-black uppercase tracking-[0.3em] text-white/40">
-             Learning & skills development through engaging workshops & masterclasses
-          </p>
         </div>
       </section>
 
@@ -350,7 +392,7 @@ export default function PurchaseTickets() {
         </div>
       </section>
 
-      {/* 7. CONDENSED AGENDA with Toggle */}
+      {/* 7. CONFERENCE AGENDA */}
       <section id="agenda" className="py-16 px-6 md:px-12 bg-cream">
          <div className="max-w-[1400px] mx-auto">
             <div className="text-center mb-12">
@@ -443,17 +485,11 @@ export default function PurchaseTickets() {
                        </div>
                        <div className="grid grid-cols-3 gap-4 items-center">
                           {Array.from({ length: branch.count }).map((_, i) => (
-                            <a 
-                              key={i} 
-                              href="https://www.awieforum.org/awief2026-conference-exhibition-save-the-date/"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="block group/logo"
-                            >
+                            <a key={i} href="https://www.awieforum.org/awief2026-conference-exhibition-save-the-date/" target="_blank" rel="noopener noreferrer" className="block group/logo">
                               <img 
                                 src="https://www.awieforum.org/wp-content/uploads/2023/08/cropped-AWIEF-logo_transparant-2048x1192-1.jpg" 
                                 alt="Partner" 
-                                className="h-4 md:h-5 w-auto object-contain grayscale opacity-60 group-hover/logo:opacity-100 group-hover/logo:grayscale-0 group-hover/logo:scale-110 transition-editorial mx-auto"
+                                className="h-4 md:h-5 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-editorial mx-auto"
                               />
                             </a>
                           ))}
@@ -523,13 +559,76 @@ export default function PurchaseTickets() {
          </div>
       </section>
 
+      {/* 10. WHY ATTEND AWIEF - Testimonials */}
+      <section className="py-24 px-6 md:px-12 bg-white overflow-hidden relative">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-brand font-black tracking-[0.4em] uppercase text-[9px] mb-4">Voices of the Ecosystem</p>
+            <h2 className="text-4xl md:text-6xl font-black uppercase font-heading tracking-tighter mb-4">WHY ATTEND <span className="text-brand serif italic">AWIEF</span></h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((t, i) => (
+              <div key={i} className="p-10 bg-warm rounded-[48px] border border-charcoal/5 hover:border-brand transition-editorial group flex flex-col justify-between">
+                <div>
+                  <Quote size={40} className="text-brand/10 mb-8 group-hover:text-brand transition-editorial" />
+                  <p className="text-sm font-medium italic leading-relaxed text-charcoal mb-8">"{t.text}"</p>
+                </div>
+                <div>
+                  <h4 className="text-[11px] font-black uppercase font-heading mb-1">{t.author}</h4>
+                  <p className="text-[8px] font-black text-brand uppercase tracking-widest">{t.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 11. CONFERENCE HIGHLIGHTS */}
+      <section className="py-24 px-6 md:px-12 bg-brand text-white overflow-hidden relative">
+        <div className="african-pattern absolute inset-0 opacity-10 scale-150 rotate-12 brightness-200"></div>
+        <div className="max-w-[1400px] mx-auto relative z-10">
+          <div className="text-center mb-16">
+            <p className="text-gold font-black tracking-[0.4em] uppercase text-[9px] mb-4">Relive the Impact</p>
+            <h2 className="text-4xl md:text-6xl font-black uppercase font-heading tracking-tighter mb-4">CONFERENCE <span className="text-gold serif italic">HIGHLIGHTS</span></h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {[
+              { year: "2025", title: "Milestone Anniversary", id: "qg1mfSal_Eg" },
+              { year: "2024", title: "Sustainable Growth", id: "MiwF0kp-pig" }
+            ].map((video, i) => (
+              <div key={i} className="group">
+                <div className="aspect-video rounded-[40px] overflow-hidden border-4 border-white/10 group-hover:border-gold/50 transition-editorial relative shadow-2xl">
+                   <iframe 
+                    className="w-full h-full grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-editorial duration-700"
+                    src={`https://www.youtube.com/embed/${video.id}`}
+                    title={`AWIEF ${video.year} Highlights`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-brand/80 via-transparent to-transparent"></div>
+                  <div className="absolute bottom-8 left-8 flex items-center gap-4">
+                     <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-brand shadow-xl"><Play size={20} fill="currentColor"/></div>
+                     <div>
+                        <p className="text-gold font-black text-[10px] uppercase tracking-[0.3em]">{video.year} HIGHLIGHTS</p>
+                        <p className="text-white text-xs font-black uppercase tracking-tight">{video.title}</p>
+                     </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CartFlows Styled Checkout Portal */}
       {showCart && selectedTicket && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-12">
            <div className="absolute inset-0 bg-charcoal/95 backdrop-blur-2xl animate-in fade-in duration-500" onClick={() => setShowCart(false)}></div>
            <div className="bg-white w-full max-w-6xl rounded-[40px] md:rounded-[64px] relative z-10 shadow-[0_50px_150px_rgba(0,0,0,0.5)] overflow-hidden animate-in slide-in-from-bottom-24 duration-700 flex flex-col md:flex-row min-h-[80vh]">
               
-              {/* Left Side: CartFlows Sidebar - Summary */}
               <div className="w-full md:w-[40%] bg-warm p-12 md:p-20 relative flex flex-col justify-between overflow-hidden border-r border-charcoal/5">
                  <div className="african-pattern absolute inset-0 opacity-[0.03] scale-150"></div>
                  <div className="relative z-10">
@@ -556,25 +655,10 @@ export default function PurchaseTickets() {
                           </div>
                        </div>
                     </div>
-
-                    <div className="space-y-4">
-                       <div className="flex items-center gap-4 text-brand/40">
-                          <ShieldCheck size={20} />
-                          <p className="text-[9px] font-black uppercase tracking-widest leading-relaxed">Secure 256-bit SSL encrypted checkout powered by CartFlows & Stripe</p>
-                       </div>
-                    </div>
-                 </div>
-
-                 <div className="relative z-10 pt-12 flex items-center gap-6 opacity-30 grayscale scale-90 origin-left">
-                    <div className="h-6 w-16 bg-charcoal/20 rounded"></div>
-                    <div className="h-6 w-16 bg-charcoal/20 rounded"></div>
-                    <div className="h-6 w-16 bg-charcoal/20 rounded"></div>
                  </div>
               </div>
 
-              {/* Right Side: CartFlows Form & Steps */}
               <div className="w-full md:w-[60%] bg-white p-12 md:p-20 flex flex-col relative overflow-y-auto">
-                 {/* Progress Bar */}
                  <div className="flex justify-between items-center mb-16 relative">
                     <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-warm -translate-y-1/2 z-0"></div>
                     <div className="absolute top-1/2 left-0 h-0.5 bg-brand -translate-y-1/2 z-0 transition-all duration-700" style={{ width: `${(checkoutStep - 1) * 50}%` }}></div>
@@ -627,13 +711,6 @@ export default function PurchaseTickets() {
                                <span className="text-[9px] font-black uppercase tracking-widest">Bank Transfer</span>
                             </div>
                          </div>
-                         <div className="space-y-6 mb-12">
-                            <input type="text" placeholder="Card Number" className="w-full bg-warm/50 border border-charcoal/5 px-6 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest focus:border-brand focus:outline-none transition-editorial" />
-                            <div className="grid grid-cols-2 gap-6">
-                               <input type="text" placeholder="MM/YY" className="w-full bg-warm/50 border border-charcoal/5 px-6 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest focus:border-brand focus:outline-none transition-editorial" />
-                               <input type="text" placeholder="CVC" className="w-full bg-warm/50 border border-charcoal/5 px-6 py-5 rounded-2xl text-[11px] font-black uppercase tracking-widest focus:border-brand focus:outline-none transition-editorial" />
-                            </div>
-                         </div>
                          <div className="flex gap-4">
                             <button onClick={() => setCheckoutStep(1)} className="w-20 h-20 rounded-full border border-charcoal/5 flex items-center justify-center hover:bg-warm transition-editorial">
                                <ArrowRight size={24} className="rotate-180" />
@@ -657,14 +734,9 @@ export default function PurchaseTickets() {
                          <div className="w-full h-2 bg-warm rounded-full overflow-hidden mb-8">
                             <div className="h-full bg-brand animate-[loading_3s_ease-in-out_infinite]"></div>
                          </div>
-                         <p className="text-[10px] font-black uppercase tracking-[0.3em] text-brand/40 animate-pulse">Processing Order...</p>
                       </div>
                     )}
                  </div>
-
-                 <p className="text-center mt-auto text-[8px] font-black text-charcoal/20 uppercase tracking-[0.3em] pt-12">
-                   Secure Portal • Verified by CartFlows 2.0
-                 </p>
               </div>
            </div>
         </div>
