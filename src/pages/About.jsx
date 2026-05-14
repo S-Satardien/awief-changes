@@ -256,40 +256,36 @@ export default function About() {
             </p>
           </div>
 
-          <div className="space-y-6">
+          <div className="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-6">
             {[
-              { id: 'strategic', title: 'Strategic Partners', desc: 'Principal funders and co-creators driving continent-wide systemic change.' },
-              { id: 'institutional', title: 'Institutional Partners', desc: 'Global and regional bodies providing structural backing and policy alignment.' },
-              { id: 'supporting', title: 'Supporting Partners', desc: 'Valued contributors empowering our events and grassroots initiatives.' }
-            ].map((tier) => (
-              <div key={tier.id} className={`border ${expandedTier === tier.id ? 'border-brand' : 'border-charcoal/10'} rounded-[32px] overflow-hidden transition-editorial`}>
-                <button 
-                  onClick={() => toggleTier(tier.id)} 
-                  className={`w-full flex items-center justify-between p-8 ${expandedTier === tier.id ? 'bg-brand/5' : 'bg-white hover:bg-warm'} transition-editorial text-left`}
-                >
-                  <div className="flex items-center gap-6">
-                    <div className={`w-2 h-10 rounded-full ${expandedTier === tier.id ? 'bg-brand' : 'bg-charcoal/20'}`}></div>
-                    <div>
-                      <h3 className={`text-xl font-black uppercase font-heading ${expandedTier === tier.id ? 'text-charcoal' : 'text-charcoal/40'}`}>
-                        {tier.title}
-                      </h3>
-                      <p className="text-sm font-medium text-charcoal/40 mt-1">{tier.desc}</p>
-                    </div>
-                  </div>
-                  <div className={`w-12 h-12 rounded-full flex items-center justify-center transition-editorial ${expandedTier === tier.id ? 'bg-brand text-white rotate-180 shadow-lg' : 'bg-warm text-charcoal/40'}`}>
-                    <ChevronDown size={24} />
-                  </div>
-                </button>
-                <div className={`overflow-hidden transition-all duration-700 ease-in-out ${expandedTier === tier.id ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'}`}>
-                  <div className="p-10 bg-warm/30 border-t border-charcoal/5 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6">
-                    {[1, 2, 3, 4, 5].map((item) => (
-                      <div key={item} className="h-28 bg-white border border-charcoal/10 rounded-2xl flex items-center justify-center hover:border-brand transition-editorial shadow-sm hover:shadow-xl">
-                         <span className="text-charcoal/20 text-[10px] font-black uppercase tracking-widest">Logo Placeholder</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+              { name: "UN Women", url: "https://www.unwomen.org", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/UN_Women_logo.svg/1200px-UN_Women_logo.svg.png" },
+              { name: "African Union", url: "https://au.int", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/51/AU_Logo.svg/1200px-AU_Logo.svg.png" },
+              { name: "Nedbank", url: "https://www.nedbank.co.za", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nedbank_logo.svg/1200px-Nedbank_logo.svg.png" },
+              { name: "Victoria's Secret", url: "https://www.victoriassecret.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Victoria%27s_Secret_logo.svg/2560px-Victoria%27s_Secret_logo.svg.png" },
+              { name: "AGF", url: "https://africanguaranteefund.com", logo: "https://africanguaranteefund.com/wp-content/uploads/2019/06/agf-logo.png" },
+              { name: "USAID", url: "https://www.usaid.gov", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/USAID-Logo.svg/1200px-USAID-Logo.svg.png" },
+              { name: "Mastercard Foundation", url: "https://mastercardfdn.org", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Mastercard_Foundation_logo.svg/1200px-Mastercard_Foundation_logo.svg.png" },
+              { name: "GIZ", url: "https://www.giz.de", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/GIZ_Logo.svg/1200px-GIZ_Logo.svg.png" },
+              { name: "European Union", url: "https://european-union.europa.eu", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1200px-Flag_of_Europe.svg.png" },
+              { name: "MTN Business", url: "https://www.mtnbusiness.co.za", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/MTN_Logo.svg/1200px-MTN_Logo.svg.png" },
+              { name: "Access Bank", url: "https://southafrica.accessbankplc.com/", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Access_Bank_PLC_logo.svg/1200px-Access_Bank_PLC_logo.svg.png" },
+              { name: "Shell", url: "https://www.shell.com", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Shell_logo.svg/1200px-Shell_logo.svg.png" },
+              { name: "Deloitte", url: "https://www.deloitte.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Deloitte.svg/1200px-Deloitte.svg.png" },
+              { name: "Facebook", url: "https://meta.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" },
+              { name: "Hivos", url: "https://hivos.org", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Hivos_logo.svg/1200px-Hivos_logo.svg.png" },
+              { name: "Google", url: "https://google.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png" },
+              { name: "Amazon", url: "https://amazon.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1200px-Amazon_logo.svg.png" },
+              { name: "Microsoft", url: "https://microsoft.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/1200px-Microsoft_logo_%282012%29.svg.png" },
+            ].map((partner, i) => (
+              <a 
+                key={i} 
+                href={partner.url} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="h-20 md:h-24 bg-white border border-charcoal/10 rounded-2xl flex items-center justify-center p-6 hover:border-brand transition-editorial shadow-sm hover:shadow-xl group"
+              >
+                <img src={partner.logo} alt={partner.name} className="max-h-full w-auto object-contain grayscale group-hover:grayscale-0 transition-editorial" />
+              </a>
             ))}
           </div>
         </div>
