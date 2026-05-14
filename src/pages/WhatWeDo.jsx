@@ -146,18 +146,18 @@ export default function WhatWeDo() {
                 <div 
                   key={p.id} 
                   onClick={() => setSelectedProg(p)}
-                  className="bg-white border border-charcoal/5 p-6 rounded-[32px] group hover:border-brand hover:shadow-xl transition-editorial cursor-pointer flex flex-row items-center gap-6 relative overflow-hidden h-auto"
+                  className="bg-white border border-charcoal/5 p-8 rounded-[32px] group hover:border-brand hover:shadow-xl transition-editorial cursor-pointer flex flex-row items-center gap-8 relative overflow-hidden h-auto"
                 >
                   <div className="african-pattern absolute inset-0 opacity-0 group-hover:opacity-[0.05] transition-editorial"></div>
                   
-                  <div className="relative z-10 w-16 h-16 rounded-[20px] bg-warm flex items-center justify-center text-brand shrink-0 group-hover:bg-brand group-hover:text-white transition-editorial shadow-sm">
-                    {p.stage.includes('Idea') ? <Rocket size={24} /> : <TrendingUp size={24} />}
+                  <div className="relative z-10 w-20 h-20 rounded-[24px] bg-warm flex items-center justify-center text-brand shrink-0 group-hover:bg-brand group-hover:text-white transition-editorial shadow-sm">
+                    {p.stage.includes('Idea') ? <Rocket size={28} /> : <TrendingUp size={28} />}
                   </div>
 
                   <div className="relative z-10 flex-grow min-w-0">
-                    <div className="flex justify-between items-center mb-2">
-                       <span className="text-brand font-black tracking-[0.15em] uppercase text-[8px] truncate">{p.stage}</span>
-                       <span className={`px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest ${
+                    <div className="flex justify-between items-center mb-3">
+                       <span className="text-brand font-black tracking-[0.15em] uppercase text-[9px] truncate">{p.stage}</span>
+                       <span className={`px-4 py-1.5 rounded-full text-[9px] font-black uppercase tracking-widest ${
                         p.status === 'Open' ? 'bg-green-100 text-green-700' :
                         p.status === 'Ongoing' ? 'bg-gold/10 text-gold' :
                         'bg-charcoal/5 text-charcoal/40'
@@ -165,8 +165,8 @@ export default function WhatWeDo() {
                         {p.status}
                       </span>
                     </div>
-                    <h3 className="text-base font-black leading-tight group-hover:text-brand transition-editorial mb-1">{p.title}</h3>
-                    <p className="text-charcoal/40 text-[11px] font-medium italic line-clamp-1">{p.desc}</p>
+                    <h3 className="text-xl font-black leading-tight group-hover:text-brand transition-editorial mb-2">{p.title}</h3>
+                    <p className="text-charcoal/40 text-sm font-medium italic line-clamp-2">{p.desc}</p>
                   </div>
 
                   <div className="relative z-10 shrink-0 opacity-0 group-hover:opacity-100 transition-editorial translate-x-4 group-hover:translate-x-0">
