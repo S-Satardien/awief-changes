@@ -71,16 +71,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Refined Description Section */}
-      <section className="bg-white py-24 px-8 relative overflow-hidden">
-        <div className="african-pattern absolute inset-0 opacity-[0.03] pointer-events-none"></div>
-        
-        <div className="max-w-[1400px] mx-auto relative z-10">
-          <p className="text-xl md:text-3xl lg:text-4xl font-bold leading-[1.4] text-charcoal max-w-none md:text-left">
-            Africa Women Innovation and Entrepreneurship Forum is a 
-            non-profit, <span className="bg-brand text-white px-3 py-1 rounded-lg inline-block transition-all hover:scale-105 hover:shadow-xl cursor-default mx-1">award-winning</span> 
-            pan-African organization dedicated to <span className="bg-brand text-white px-4 py-1 rounded-lg inline-block transition-all hover:scale-105 hover:shadow-xl cursor-default mx-1">women's economic empowerment</span>.
-          </p>
+      {/* Editorial Mission Card Section */}
+      <section className="bg-white py-12 px-8">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="bg-brand/5 border-l-[12px] border-brand p-8 md:p-12 rounded-[40px] relative overflow-hidden shadow-sm group hover:shadow-xl transition-editorial">
+             <div className="african-pattern absolute inset-0 opacity-[0.05] pointer-events-none"></div>
+             <div className="relative z-10">
+                <p className="text-lg md:text-2xl font-bold leading-relaxed text-charcoal/80">
+                  Africa Women Innovation and Entrepreneurship Forum is a 
+                  non-profit, <span className="text-brand font-black hover:text-brand-dark transition-colors cursor-default">award-winning</span> 
+                  pan-African organization dedicated to <span className="text-brand font-black hover:text-brand-dark transition-colors cursor-default">women's economic empowerment</span>.
+                </p>
+             </div>
+          </div>
         </div>
       </section>
 
