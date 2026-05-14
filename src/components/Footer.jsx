@@ -39,11 +39,11 @@ export default function Footer() {
             <h4 className="text-gold font-black mb-8 text-[10px] tracking-[0.3em] uppercase">Connect With Us</h4>
             <div className="flex gap-4 justify-center md:justify-start flex-wrap">
               {[
-                { icon: Facebook, url: "#", label: "Facebook" },
-                { icon: Twitter, url: "#", label: "Twitter" },
-                { icon: Linkedin, url: "#", label: "LinkedIn" },
-                { icon: Instagram, url: "#", label: "Instagram" },
-                { icon: MessageCircle, url: "https://wa.me/27210206022", label: "WhatsApp" }
+                { Icon: Facebook, url: "#", label: "Facebook" },
+                { Icon: Twitter, url: "#", label: "Twitter" },
+                { Icon: Linkedin, url: "#", label: "LinkedIn" },
+                { Icon: Instagram, url: "#", label: "Instagram" },
+                { Icon: MessageCircle, url: "https://wa.me/27210206022", label: "WhatsApp" }
               ].map((s, idx) => (
                 <a 
                   key={idx} 
@@ -51,7 +51,7 @@ export default function Footer() {
                   className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center hover:bg-gold hover:text-brand transition-editorial border border-white/10 group"
                   aria-label={s.label}
                 >
-                  <s.icon size={20} strokeWidth={1.5} className="group-hover:scale-110 transition-transform" />
+                  <s.Icon size={20} strokeWidth={1.5} className="group-hover:scale-110 transition-transform" />
                 </a>
               ))}
             </div>
