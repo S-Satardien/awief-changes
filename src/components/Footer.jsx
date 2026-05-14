@@ -69,7 +69,7 @@ export default function Footer() {
             <h4 className="text-gold font-black mb-8 text-[10px] tracking-[0.3em] uppercase">AWIEF Pillars</h4>
             <ul className="space-y-4 text-xs font-black tracking-widest uppercase">
               <li><a href="/what-we-do#programmes" className="hover:text-gold transition-editorial">Programmes</a></li>
-              <li><a href="/what-we-do#conference" className="hover:text-gold transition-editorial">Annual Conference</a></li>
+              <li><a href="/what-we-do#conference" className="hover:text-gold transition-editorial">Annual Conference & Expo</a></li>
               <li><a href="/what-we-do#awards" className="hover:text-gold transition-editorial">AWIEF Awards</a></li>
               <li><a href="/what-we-do#advocacy" className="hover:text-gold transition-editorial">Advocacy</a></li>
             </ul>

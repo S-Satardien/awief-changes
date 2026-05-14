@@ -93,7 +93,7 @@ export default function Navbar({ activePage = '' }) {
                 active="what-we-do"
                 links={[
                   { label: "PROGRAMMES", href: "/what-we-do" },
-                  { label: "ANNUAL CONFERENCE", href: "/what-we-do#conference" },
+                  { label: "ANNUAL CONFERENCE & EXPO", href: "/what-we-do#conference" },
                   { label: "AWIEF AWARDS", href: "/what-we-do#awards" },
                   { label: "ADVOCACY", href: "/what-we-do#advocacy" }
                 ]}
@@ -141,6 +141,7 @@ export default function Navbar({ activePage = '' }) {
               <a href="/" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">HOME</a>
               <a href="/about" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">ABOUT</a>
               <a href="/what-we-do" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">WHAT WE DO</a>
+              <a href="/what-we-do#conference" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">ANNUAL CONFERENCE & EXPO</a>
               <a href="/our-impact" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">OUR IMPACT</a>
               <a href="/news" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">NEWS</a>
               <a href="/get-involved" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">GET INVOLVED</a>
