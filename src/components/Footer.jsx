@@ -101,6 +101,9 @@ export default function Footer() {
               <li className="flex items-center gap-3"><Mail size={14} className="text-gold"/> info@awieforum.org</li>
               <li className="flex items-center gap-3"><Phone size={14} className="text-gold"/> +27 21 020 6022</li>
             </ul>
+            <a href="/contact-us" className="inline-block bg-white/10 border border-white/20 text-white px-8 py-4 rounded-2xl text-[10px] font-black uppercase tracking-[0.3em] hover:bg-gold hover:text-brand transition-editorial shadow-lg mb-8">
+              Contact Us
+            </a>
             <div className="flex flex-col gap-3">
               <input type="email" placeholder="Subscribe to Newsletter" className="bg-white/5 border border-white/10 px-6 py-4 rounded-2xl text-[10px] font-black uppercase tracking-widest text-white focus:outline-none focus:border-gold placeholder:text-white/20 transition-editorial" />
               <button className="bg-gold text-brand px-6 py-4 rounded-2xl font-black text-[10px] uppercase tracking-[0.3em] hover:bg-white transition-editorial shadow-2xl">Subscribe</button>
