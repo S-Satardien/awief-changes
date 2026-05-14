@@ -1,3 +1,4 @@
+import React from 'react'
 import { Globe, Facebook, Twitter, Linkedin, Instagram, MessageCircle, Mail, Phone } from 'lucide-react'
 
 export default function Footer() {
