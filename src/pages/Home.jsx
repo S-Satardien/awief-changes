@@ -126,54 +126,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. STRATEGIC PARTNERSHIPS - Redesigned Editorial Section */}
-      <section className="section-spacing px-6 md:px-12 bg-white relative overflow-hidden">
-        <div className="max-w-[1400px] mx-auto relative z-10">
-           <div className="editorial-grid items-center gap-24">
-              <div className="col-span-12 lg:col-span-6">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand/40 bg-brand/10 backdrop-blur mb-5">
-                    <Users size={14} className="text-brand"/>
-                    <span className="text-brand text-[9px] font-black tracking-[0.3em] uppercase">The Partnership Opportunity</span>
-                 </div>
-                 <h2 className="text-4xl md:text-6xl font-black uppercase font-heading leading-[0.9] tracking-tighter mb-5">
-                    Invest in Africa's Most <br/> <span className="text-brand italic serif normal-case">Impactful</span> Women's Platform
-                 </h2>
-                 <p className="text-xl text-charcoal/60 leading-relaxed font-medium mb-6 italic border-l-8 border-brand pl-12">
-                    Join a growing ecosystem of forward-thinking organizations driving real systemic change. Our partners gain unparalleled access to Africa's most influential women's network — from boardrooms to grassroots communities across 48 countries.
-                 </p>
-                 
-                 <div className="space-y-8 mb-8">
-                    {[
-                      "Access 150+ partners across 50 countries in our strategic network",
-                      "Brand presence at flagship UN-side events and the Annual AWIEF Conference",
-                      "Co-create programmes with measurable social and economic impact outcomes"
-                    ].map((item, i) => (
-                      <div key={i} className="flex gap-6 items-start group">
-                         <div className="w-8 h-8 rounded-full bg-brand/10 flex items-center justify-center shrink-0 group-hover:bg-brand group-hover:text-white transition-editorial border border-brand/20">
-                            <ArrowRight size={14} className="group-hover:translate-x-1 transition-editorial" />
-                         </div>
-                         <p className="text-sm font-bold uppercase tracking-widest text-charcoal/60 leading-relaxed group-hover:text-charcoal transition-editorial">{item}</p>
-                      </div>
-                    ))}
-                 </div>
-
-                 <a href="/get-involved" className="inline-flex items-center gap-6 bg-charcoal text-white px-12 py-6 rounded-full font-black text-[10px] uppercase tracking-[0.3em] hover:bg-brand transition-editorial shadow-2xl">
-                    EXPLORE PARTNERSHIP OPPORTUNITIES <ArrowRight size={18} />
-                 </a>
-              </div>
-              <div className="col-span-12 lg:col-span-6">
-                 <div className="relative aspect-square rounded-[64px] overflow-hidden shadow-2xl group border-4 border-white/40">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32d7?w=1000&q=80" alt="Strategic Partnership" className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-editorial duration-1000 scale-110 group-hover:scale-100" />
-                    <div className="absolute inset-0 bg-brand/20 group-hover:bg-transparent transition-editorial"></div>
-                    <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-gold rounded-full flex flex-col items-center justify-center text-white text-center p-8 rotate-12 shadow-2xl border-4 border-white hidden md:flex">
-                       <Sparkles size={40} className="mb-4" />
-                       <p className="text-[10px] font-black uppercase tracking-widest">Co-Create for Systemic Change</p>
-                    </div>
-                 </div>
-              </div>
-           </div>
-        </div>
-      </section>
 
       {/* Redesigned Multi-Testimonial Section with Visible Patterned Background - Main Brand Color */}
       <section className="section-spacing relative bg-brand overflow-hidden rounded-[60px] my-12 mx-6 md:mx-12">
