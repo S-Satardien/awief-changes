@@ -190,8 +190,8 @@ export default function WhatWeDo() {
                      <Sparkles size={12} className="text-brand animate-pulse"/>
                      <span className="text-brand text-[9px] font-black tracking-[0.3em] uppercase">The Platform</span>
                   </div>
-                  <h2 className="text-5xl md:text-[6rem] font-black uppercase font-heading leading-[0.8] tracking-tighter mb-10">
-                    Beyond <br/> <span className="text-gold serif italic normal-case">Access</span>
+                  <h2 className="text-5xl md:text-[5rem] font-black uppercase font-heading leading-[0.8] tracking-tighter mb-10">
+                    AWIEF Annual <br/> <span className="text-gold serif italic normal-case">Conference & Expo</span>
                   </h2>
                   
                   <div className="space-y-8 mb-16 pr-12">
