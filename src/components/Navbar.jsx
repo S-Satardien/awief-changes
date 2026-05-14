@@ -99,7 +99,18 @@ export default function Navbar({ activePage = '' }) {
                 ]}
               />
 
-              <a href="/purchase-conference-tickets" className={isActive('conference')}>AWIEF2026 CONFERENCE & EXPO</a>
+              <NavItemWithDropdown 
+                label="AWIEF2026 CONFERENCE & EXPO" 
+                active="conference"
+                links={[
+                  { label: "AGENDA", href: "/purchase-conference-tickets#agenda" },
+                  { label: "SPEAKERS", href: "/purchase-conference-tickets#speakers" },
+                  { label: "SPONSORS & PARTNERS", href: "/purchase-conference-tickets#sponsors" },
+                  { label: "EXHIBIT", href: "/purchase-conference-tickets#exhibit" },
+                  { label: "HOTEL & FLIGHT INFORMATION", href: "/purchase-conference-tickets#travel" },
+                  { label: "PAST CONFERENCES", href: "/past-conferences" }
+                ]}
+              />
 
               <a href="/our-impact" className={isActive('our-impact')}>OUR IMPACT</a>
 
