@@ -137,7 +137,7 @@ export default function Home() {
            </div>
 
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
+               {[
                 {
                   q: "The AWIEF Growth Accelerator provided exactly what my business needed at a critical stage. The investment readiness training and mentorship were game-changers.",
                   n: "Kedibone Tsiloane",
@@ -173,6 +173,12 @@ export default function Home() {
                    </div>
                 </div>
               ))}
+           </div>
+
+           <div className="mt-16 text-center">
+              <a href="/our-impact" className="inline-flex items-center gap-6 bg-gold text-charcoal px-12 py-6 rounded-full font-black text-[10px] uppercase tracking-[0.3em] hover:bg-white transition-editorial shadow-2xl">
+                 Learn More About Our Impact <ArrowRight size={18} />
+              </a>
            </div>
         </div>
       </section>
