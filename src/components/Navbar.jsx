@@ -62,11 +62,11 @@ export default function Navbar({ activePage = '' }) {
             {/* Logo */}
             <div className="flex-shrink-0">
               <a href="/" className="block group">
-                <div className={`transition-editorial bg-white p-2 rounded-2xl ${isScrolled ? 'h-12' : 'h-18 shadow-2xl border border-charcoal/5'}`}>
+                <div className={`transition-editorial bg-white p-2 rounded-2xl flex items-center ${isScrolled ? 'h-16 px-4' : 'h-24 px-6 shadow-2xl border border-charcoal/5'}`}>
                   <img 
                     src="https://www.awieforum.org/wp-content/uploads/2023/08/cropped-AWIEF-logo_transparant-2048x1192-1.jpg" 
                     alt="AWIEF" 
-                    className="h-full w-auto object-contain" 
+                    className="h-full w-auto object-contain scale-110" 
                   />
                 </div>
               </a>
