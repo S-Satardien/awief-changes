@@ -26,11 +26,11 @@ export default function Navbar({ activePage = '' }) {
       : 'text-white/80 hover:text-white transition-editorial'
   }
 
-  const NavItemWithDropdown = ({ label, links, active }) => (
+  const NavItemWithDropdown = ({ label, mainHref, links, active }) => (
     <div className="relative group/nav">
-      <button className={`flex items-center gap-1 py-2 ${isActive(active)}`}>
+      <a href={mainHref} className={`flex items-center gap-1 py-2 ${isActive(active)}`}>
         {label} <ChevronDown size={14} className="group-hover/nav:rotate-180 transition-editorial" />
-      </button>
+      </a>
       <div className="absolute top-[calc(100%-10px)] left-0 pt-4 opacity-0 invisible group-hover/nav:opacity-100 group-hover/nav:visible transition-editorial z-50">
         <div className="w-64 bg-white rounded-[32px] shadow-2xl border border-charcoal/5 overflow-hidden p-4">
           {links.map((link, idx) => (
@@ -78,6 +78,7 @@ export default function Navbar({ activePage = '' }) {
               
               <NavItemWithDropdown 
                 label="ABOUT" 
+                mainHref="/about"
                 active="about"
                 links={[
                   { label: "ABOUT AWIEF", href: "/about" },
@@ -90,6 +91,7 @@ export default function Navbar({ activePage = '' }) {
 
               <NavItemWithDropdown 
                 label="WHAT WE DO" 
+                mainHref="/what-we-do"
                 active="what-we-do"
                 links={[
                   { label: "PROGRAMMES", href: "/what-we-do" },
@@ -101,6 +103,7 @@ export default function Navbar({ activePage = '' }) {
 
               <NavItemWithDropdown 
                 label="AWIEF2026 CONFERENCE & EXPO" 
+                mainHref="/purchase-conference-tickets"
                 active="conference"
                 links={[
                   { label: "AGENDA", href: "/purchase-conference-tickets#agenda" },
@@ -118,6 +121,7 @@ export default function Navbar({ activePage = '' }) {
 
               <NavItemWithDropdown 
                 label="GET INVOLVED" 
+                mainHref="/get-involved"
                 active="get-involved"
                 links={[
                   { label: "VOLUNTEER WITH AWIEF", href: "/get-involved#volunteer" },
