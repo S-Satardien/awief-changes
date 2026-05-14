@@ -183,45 +183,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Strategic Partners Section - Clean & High Impact */}
-      <section className="py-24 px-8 bg-warm">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-brand font-black tracking-[0.4em] uppercase text-[10px] mb-4">An Ecosystem of Change</p>
-            <h2 className="text-4xl md:text-5xl font-black uppercase font-heading text-charcoal">Our Strategic <span className="text-brand italic serif normal-case">Partners</span></h2>
+      {/* Continuous Marquee Partners Section */}
+      <section className="py-16 bg-white overflow-hidden border-y border-charcoal/5">
+        <div className="max-w-[1400px] mx-auto px-8 mb-12">
+          <div className="flex flex-col md:flex-row justify-between items-end gap-6">
+            <div className="max-w-2xl">
+              <p className="text-brand font-black tracking-[0.4em] uppercase text-[10px] mb-4">An Ecosystem of Change</p>
+              <h2 className="text-4xl md:text-5xl font-black uppercase font-heading text-charcoal tracking-tighter">Our <span className="text-brand italic serif normal-case">Partners</span></h2>
+            </div>
+            <a href="https://www.awieforum.org/partners/" target="_blank" rel="noopener noreferrer" className="text-charcoal/40 font-black hover:text-brand flex items-center gap-4 text-[10px] uppercase tracking-widest transition-editorial pb-2">
+               View All Institutional Partners <ArrowRight size={18}/>
+            </a>
           </div>
+        </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="relative group">
+          {/* Row 1 */}
+          <div className="flex animate-marquee py-4">
             {[
               { name: "UN Women", url: "https://www.unwomen.org", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/UN_Women_logo.svg/1200px-UN_Women_logo.svg.png" },
               { name: "African Union", url: "https://au.int", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/51/AU_Logo.svg/1200px-AU_Logo.svg.png" },
               { name: "Nedbank", url: "https://www.nedbank.co.za", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nedbank_logo.svg/1200px-Nedbank_logo.svg.png" },
               { name: "Victoria's Secret", url: "https://www.victoriassecret.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Victoria%27s_Secret_logo.svg/2560px-Victoria%27s_Secret_logo.svg.png" },
-              { name: "African Guarantee Fund", url: "https://africanguaranteefund.com", logo: "https://africanguaranteefund.com/wp-content/uploads/2019/06/agf-logo.png" },
-              { name: "FSDH Merchant Bank", url: "https://www.fsdhmerchantbank.com", logo: "https://fsdhmerchantbank.com/images/fsdh_logo.png" },
-              { name: "U.S. Mission", url: "https://www.state.gov", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/U.S._Department_of_State_official_seal.svg/1200px-U.S._Department_of_State_official_seal.svg.png" },
-              { name: "European Union", url: "https://european-union.europa.eu", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1200px-Flag_of_Europe.svg.png" }
-            ].map((partner, i) => (
+              { name: "AGF", url: "https://africanguaranteefund.com", logo: "https://africanguaranteefund.com/wp-content/uploads/2019/06/agf-logo.png" },
+              { name: "USAID", url: "https://www.usaid.gov", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/USAID-Logo.svg/1200px-USAID-Logo.svg.png" },
+              { name: "Mastercard Foundation", url: "https://mastercardfdn.org", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Mastercard_Foundation_logo.svg/1200px-Mastercard_Foundation_logo.svg.png" },
+              { name: "GIZ", url: "https://www.giz.de", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/GIZ_Logo.svg/1200px-GIZ_Logo.svg.png" },
+              { name: "European Union", url: "https://european-union.europa.eu", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1200px-Flag_of_Europe.svg.png" },
+              { name: "MTN Business", url: "https://www.mtnbusiness.co.za", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/MTN_Logo.svg/1200px-MTN_Logo.svg.png" },
+              { name: "Access Bank", url: "https://southafrica.accessbankplc.com/", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Access_Bank_PLC_logo.svg/1200px-Access_Bank_PLC_logo.svg.png" },
+              { name: "Shell", url: "https://www.shell.com", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Shell_logo.svg/1200px-Shell_logo.svg.png" },
+              { name: "Deloitte", url: "https://www.deloitte.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Deloitte.svg/1200px-Deloitte.svg.png" },
+              { name: "Facebook", url: "https://meta.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" },
+              { name: "Hivos", url: "https://hivos.org", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Hivos_logo.svg/1200px-Hivos_logo.svg.png" },
+            ].concat([
+              { name: "UN Women", url: "https://www.unwomen.org", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/UN_Women_logo.svg/1200px-UN_Women_logo.svg.png" },
+              { name: "African Union", url: "https://au.int", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/5/51/AU_Logo.svg/1200px-AU_Logo.svg.png" },
+              { name: "Nedbank", url: "https://www.nedbank.co.za", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Nedbank_logo.svg/1200px-Nedbank_logo.svg.png" },
+              { name: "Victoria's Secret", url: "https://www.victoriassecret.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Victoria%27s_Secret_logo.svg/2560px-Victoria%27s_Secret_logo.svg.png" },
+              { name: "AGF", url: "https://africanguaranteefund.com", logo: "https://africanguaranteefund.com/wp-content/uploads/2019/06/agf-logo.png" },
+              { name: "USAID", url: "https://www.usaid.gov", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/USAID-Logo.svg/1200px-USAID-Logo.svg.png" },
+              { name: "Mastercard Foundation", url: "https://mastercardfdn.org", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Mastercard_Foundation_logo.svg/1200px-Mastercard_Foundation_logo.svg.png" },
+              { name: "GIZ", url: "https://www.giz.de", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/GIZ_Logo.svg/1200px-GIZ_Logo.svg.png" },
+              { name: "European Union", url: "https://european-union.europa.eu", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/1200px-Flag_of_Europe.svg.png" },
+              { name: "MTN Business", url: "https://www.mtnbusiness.co.za", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/MTN_Logo.svg/1200px-MTN_Logo.svg.png" },
+              { name: "Access Bank", url: "https://southafrica.accessbankplc.com/", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Access_Bank_PLC_logo.svg/1200px-Access_Bank_PLC_logo.svg.png" },
+              { name: "Shell", url: "https://www.shell.com", logo: "https://upload.wikimedia.org/wikipedia/en/thumb/e/e8/Shell_logo.svg/1200px-Shell_logo.svg.png" },
+              { name: "Deloitte", url: "https://www.deloitte.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Deloitte.svg/1200px-Deloitte.svg.png" },
+              { name: "Facebook", url: "https://meta.com", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Meta_Platforms_Inc._logo.svg/1200px-Meta_Platforms_Inc._logo.svg.png" },
+              { name: "Hivos", url: "https://hivos.org", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Hivos_logo.svg/1200px-Hivos_logo.svg.png" },
+            ]).map((partner, i) => (
               <a 
                 href={partner.url} 
                 key={i} 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="group bg-white p-8 md:p-12 rounded-[32px] border border-charcoal/5 flex items-center justify-center hover:border-brand hover:shadow-2xl transition-editorial h-32 md:h-40"
+                className="mx-12 h-16 md:h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-editorial opacity-50 hover:opacity-100 hover:scale-110"
               >
-                <img 
-                  src={partner.logo} 
-                  alt={partner.name} 
-                  className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-editorial duration-500 scale-90 group-hover:scale-100" 
-                />
+                <img src={partner.logo} alt={partner.name} className="max-h-full w-auto object-contain" />
               </a>
             ))}
-          </div>
-
-          <div className="mt-16 text-center">
-             <a href="/about#our-partners" className="text-charcoal/40 font-black hover:text-brand flex items-center justify-center gap-4 text-[10px] uppercase tracking-widest transition-editorial">
-               View All Institutional Partners <ArrowRight size={18}/>
-             </a>
           </div>
         </div>
       </section>
