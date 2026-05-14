@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { 
@@ -7,7 +7,7 @@ import {
   Award, ArrowUpRight, X, ShoppingBag, ChevronRight, Zap, 
   Globe, HeartHandshake, Mic2, Users2, Rocket, Building2,
   Plane, Hotel, Coffee, Presentation, Target, Lightbulb, TrendingUp,
-  Layout, Shield, User, Landmark, Fingerprint, Quote, Play
+  Layout, Shield, User, Landmark, Fingerprint, Quote, Play, ChevronLeft
 } from 'lucide-react'
 
 export default function PurchaseTickets() {
@@ -15,6 +15,7 @@ export default function PurchaseTickets() {
   const [showCart, setShowCart] = useState(false)
   const [activeDay, setActiveDay] = useState(1)
   const [checkoutStep, setCheckoutStep] = useState(1)
+  const [testimonialIndex, setTestimonialIndex] = useState(0)
 
   const tickets = [
     { 
@@ -125,6 +126,16 @@ export default function PurchaseTickets() {
     }
   ]
 
+  // Testimonial Rotation Logic
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTestimonialIndex((prev) => (prev + 3 >= testimonials.length ? 0 : prev + 3))
+    }, 6000)
+    return () => clearInterval(timer)
+  }, [testimonials.length])
+
+  const visibleTestimonials = testimonials.slice(testimonialIndex, testimonialIndex + 3)
+
   const handleSelect = (ticket) => {
     setSelectedTicket(ticket)
     setShowCart(true)
@@ -190,7 +201,7 @@ export default function PurchaseTickets() {
       </section>
 
       {/* 2. LEADING CHANGE */}
-      <section id="about-conference" className="py-16 px-6 md:px-12 bg-white relative overflow-hidden">
+      <section id="about-conference" className="py-24 px-6 md:px-12 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
@@ -559,17 +570,33 @@ export default function PurchaseTickets() {
          </div>
       </section>
 
-      {/* 10. WHY ATTEND AWIEF - Testimonials */}
-      <section className="py-24 px-6 md:px-12 bg-white overflow-hidden relative">
+      {/* 10. WHY ATTEND AWIEF - Testimonials Rotational */}
+      <section className="py-24 px-6 md:px-12 bg-cream overflow-hidden relative">
         <div className="max-w-[1400px] mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-brand font-black tracking-[0.4em] uppercase text-[9px] mb-4">Voices of the Ecosystem</p>
-            <h2 className="text-4xl md:text-6xl font-black uppercase font-heading tracking-tighter mb-4">WHY ATTEND <span className="text-brand serif italic">AWIEF</span></h2>
+          <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-8">
+            <div className="text-left">
+              <p className="text-brand font-black tracking-[0.4em] uppercase text-[9px] mb-4">Voices of the Ecosystem</p>
+              <h2 className="text-4xl md:text-6xl font-black uppercase font-heading tracking-tighter">WHY ATTEND <span className="text-brand serif italic">AWIEF</span></h2>
+            </div>
+            <div className="flex gap-4">
+              <button 
+                onClick={() => setTestimonialIndex((prev) => (prev - 3 < 0 ? testimonials.length - (testimonials.length % 3 || 3) : prev - 3))}
+                className="w-16 h-16 rounded-full border border-brand/20 flex items-center justify-center text-brand hover:bg-brand hover:text-white transition-editorial"
+              >
+                <ChevronLeft size={24} />
+              </button>
+              <button 
+                onClick={() => setTestimonialIndex((prev) => (prev + 3 >= testimonials.length ? 0 : prev + 3))}
+                className="w-16 h-16 rounded-full border border-brand/20 flex items-center justify-center text-brand hover:bg-brand hover:text-white transition-editorial"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
-              <div key={i} className="p-10 bg-warm rounded-[48px] border border-charcoal/5 hover:border-brand transition-editorial group flex flex-col justify-between">
+          <div className="grid md:grid-cols-3 gap-8 transition-all duration-700 ease-in-out">
+            {visibleTestimonials.map((t, i) => (
+              <div key={`${testimonialIndex}-${i}`} className="p-10 bg-white rounded-[48px] border border-charcoal/5 hover:border-brand transition-editorial group flex flex-col justify-between shadow-xl animate-in fade-in slide-in-from-right-8 duration-700">
                 <div>
                   <Quote size={40} className="text-brand/10 mb-8 group-hover:text-brand transition-editorial" />
                   <p className="text-sm font-medium italic leading-relaxed text-charcoal mb-8">"{t.text}"</p>
@@ -585,12 +612,11 @@ export default function PurchaseTickets() {
       </section>
 
       {/* 11. CONFERENCE HIGHLIGHTS */}
-      <section className="py-24 px-6 md:px-12 bg-brand text-white overflow-hidden relative">
-        <div className="african-pattern absolute inset-0 opacity-10 scale-150 rotate-12 brightness-200"></div>
+      <section className="py-24 px-6 md:px-12 bg-white overflow-hidden relative">
         <div className="max-w-[1400px] mx-auto relative z-10">
           <div className="text-center mb-16">
-            <p className="text-gold font-black tracking-[0.4em] uppercase text-[9px] mb-4">Relive the Impact</p>
-            <h2 className="text-4xl md:text-6xl font-black uppercase font-heading tracking-tighter mb-4">CONFERENCE <span className="text-gold serif italic">HIGHLIGHTS</span></h2>
+            <p className="text-brand font-black tracking-[0.4em] uppercase text-[9px] mb-4">Relive the Impact</p>
+            <h2 className="text-4xl md:text-6xl font-black uppercase font-heading tracking-tighter mb-4">PAST <span className="text-brand serif italic">Conference Highlights</span></h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
@@ -599,7 +625,7 @@ export default function PurchaseTickets() {
               { year: "2024", title: "Sustainable Growth", id: "MiwF0kp-pig" }
             ].map((video, i) => (
               <div key={i} className="group">
-                <div className="aspect-video rounded-[40px] overflow-hidden border-4 border-white/10 group-hover:border-gold/50 transition-editorial relative shadow-2xl">
+                <div className="aspect-video rounded-[40px] overflow-hidden border-4 border-charcoal/5 group-hover:border-brand transition-editorial relative shadow-2xl">
                    <iframe 
                     className="w-full h-full grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-editorial duration-700"
                     src={`https://www.youtube.com/embed/${video.id}`}
@@ -608,12 +634,12 @@ export default function PurchaseTickets() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
-                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-brand/80 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-brand/20 via-transparent to-transparent"></div>
                   <div className="absolute bottom-8 left-8 flex items-center gap-4">
-                     <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center text-brand shadow-xl"><Play size={20} fill="currentColor"/></div>
+                     <div className="w-12 h-12 rounded-full bg-brand flex items-center justify-center text-white shadow-xl"><Play size={20} fill="currentColor"/></div>
                      <div>
-                        <p className="text-gold font-black text-[10px] uppercase tracking-[0.3em]">{video.year} HIGHLIGHTS</p>
-                        <p className="text-white text-xs font-black uppercase tracking-tight">{video.title}</p>
+                        <p className="text-brand font-black text-[10px] uppercase tracking-[0.3em]">{video.year} HIGHLIGHTS</p>
+                        <p className="text-charcoal text-xs font-black uppercase tracking-tight">{video.title}</p>
                      </div>
                   </div>
                 </div>
