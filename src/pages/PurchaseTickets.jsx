@@ -12,6 +12,7 @@ import {
 export default function PurchaseTickets() {
   const [selectedTicket, setSelectedTicket] = useState(null)
   const [showCart, setShowCart] = useState(false)
+  const [activeDay, setActiveDay] = useState(1)
 
   const tickets = [
     { 
@@ -54,6 +55,26 @@ export default function PurchaseTickets() {
     }
   ]
 
+  const agendaDays = {
+    1: [
+      { time: "08:30 AM", event: "Registration & Morning Networking", type: "Logistics" },
+      { time: "09:30 AM", event: "Grand Opening: Beyond Access", type: "Main Stage" },
+      { time: "11:30 AM", event: "Panel: Owning the Digital Future", type: "Session" },
+      { time: "01:00 PM", event: "Networking Lunch & Exhibition", type: "Networking" },
+      { time: "02:30 PM", event: "Masterclass: Scaling Venture Capital", type: "Workshop" },
+      { time: "04:30 PM", event: "B2B Matchmaking Sessions", type: "Networking" },
+      { time: "06:00 PM", event: "Day 1 Closing Reception", type: "Logistics" }
+    ],
+    2: [
+      { time: "09:00 AM", event: "Policy Roundtable: Markets & Power", type: "High-Level" },
+      { time: "11:00 AM", event: "Fireside Chat: Global Connectivity", type: "Main Stage" },
+      { time: "12:30 PM", event: "Networking Lunch", type: "Networking" },
+      { time: "02:00 PM", event: "Workshop: Building Power Networks", type: "Interactive" },
+      { time: "04:00 PM", event: "Final Keynote & Call to Action", type: "Main Stage" },
+      { time: "07:30 PM", event: "AWIEF Awards & Gala Dinner", type: "Prestigious" }
+    ]
+  }
+
   const handleSelect = (ticket) => {
     setSelectedTicket(ticket)
     setShowCart(true)
@@ -91,14 +112,14 @@ export default function PurchaseTickets() {
           </p>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-10 mb-16">
-            <div className="flex flex-col items-center md:items-start">
+            <div className="flex flex-col items-center md:items-start text-center">
                <div className="flex items-center gap-3 text-gold mb-1">
                   <Calendar size={20} />
                   <span className="font-black text-lg uppercase font-heading tracking-tight text-white">Nov 10 - 11, 2026</span>
                </div>
             </div>
             <div className="w-px h-10 bg-white/10 hidden md:block"></div>
-            <div className="flex flex-col items-center md:items-start">
+            <div className="flex flex-col items-center md:items-start text-center">
                <div className="flex items-center gap-3 text-gold mb-1">
                   <MapPin size={20} />
                   <span className="font-black text-lg uppercase font-heading tracking-tight text-white">Cape Town, SA</span>
@@ -117,7 +138,7 @@ export default function PurchaseTickets() {
         </div>
       </section>
 
-      {/* 2. TICKETS & REGISTRATION - Moved higher for visibility */}
+      {/* 2. TICKETS & REGISTRATION */}
       <section id="tickets" className="py-16 px-6 md:px-12 bg-cream relative z-30">
         <div className="max-w-[1400px] mx-auto">
           <div className="text-center mb-16">
@@ -210,7 +231,7 @@ export default function PurchaseTickets() {
          </div>
       </section>
 
-      {/* 4. SPEAKERS - High density, bg-brand */}
+      {/* 4. SPEAKERS */}
       <section id="speakers" className="py-16 px-6 md:px-12 bg-brand text-white overflow-hidden relative">
         <div className="african-pattern absolute inset-0 opacity-10 scale-150 rotate-12 brightness-200"></div>
         <div className="max-w-[1400px] mx-auto relative z-10">
@@ -241,24 +262,30 @@ export default function PurchaseTickets() {
         </div>
       </section>
 
-      {/* 5. CONDENSED AGENDA */}
+      {/* 5. CONDENSED AGENDA with Toggle */}
       <section id="agenda" className="py-16 px-6 md:px-12 bg-cream">
          <div className="max-w-[1400px] mx-auto">
             <div className="text-center mb-12">
-               <h2 className="text-4xl md:text-5xl font-black uppercase font-heading tracking-tighter mb-4">SUMMIT <span className="text-brand italic serif">AGENDA</span></h2>
+               <h2 className="text-4xl md:text-5xl font-black uppercase font-heading tracking-tighter mb-8">SUMMIT <span className="text-brand italic serif">AGENDA</span></h2>
+               <div className="flex justify-center gap-4">
+                  {[1, 2].map(day => (
+                    <button 
+                      key={day}
+                      onClick={() => setActiveDay(day)}
+                      className={`px-10 py-4 rounded-full text-[10px] font-black uppercase tracking-widest transition-editorial border-2 ${
+                        activeDay === day 
+                        ? 'bg-brand text-white border-brand shadow-lg scale-105' 
+                        : 'bg-white text-charcoal/30 border-charcoal/5 hover:border-brand hover:text-brand'
+                      }`}
+                    >
+                      Day {day}
+                    </button>
+                  ))}
+               </div>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto">
-               {[
-                 { time: "08:30 AM", event: "Registration & Arrival", type: "Logistics" },
-                 { time: "09:30 AM", event: "Opening Ceremony & Keynotes", type: "Main Stage" },
-                 { time: "11:30 AM", event: "Panel: Owning the Digital Future", type: "Session" },
-                 { time: "01:00 PM", event: "Networking Lunch", type: "Networking" },
-                 { time: "02:30 PM", event: "Industry Masterclasses", type: "Workshop" },
-                 { time: "04:30 PM", event: "B2B Matchmaking Sessions", type: "Networking" },
-                 { time: "06:00 PM", event: "Day 1 Closing", type: "Logistics" },
-                 { time: "07:30 PM", event: "Gala Dinner (Premium Only)", type: "Special" }
-               ].map((item, i) => (
+            <div className="grid md:grid-cols-2 gap-4 max-w-5xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-500">
+               {agendaDays[activeDay].map((item, i) => (
                  <div key={i} className="p-5 bg-white rounded-2xl border border-charcoal/5 flex items-center justify-between hover:border-brand transition-editorial group">
                     <div className="flex items-center gap-6">
                        <span className="text-brand font-black text-[9px] uppercase tracking-widest w-16">{item.time}</span>
@@ -281,7 +308,7 @@ export default function PurchaseTickets() {
                <div className="w-full md:w-1/2 p-10 md:p-16 flex flex-col justify-center text-white">
                   <p className="text-gold text-[8px] font-black tracking-[0.4em] uppercase mb-6">Showcase | Connect | Grow</p>
                   <h2 className="text-3xl md:text-5xl font-black uppercase font-heading tracking-tighter mb-8 leading-tight">EXHIBIT <span className="text-gold italic serif">WITH US</span></h2>
-                  <p className="text-white/60 text-sm font-medium italic mb-8">Showcase your brand to a global audience of decision-makers and investors.</p>
+                  <p className="text-white/60 text-sm font-medium italic mb-8">Showcase your brand to a global audience of decision-makers and investors. Join 100+ innovative SMEs.</p>
                   <a href="/contact-us" className="bg-gold text-brand px-8 py-4 rounded-full font-black text-[9px] uppercase tracking-[0.3em] hover:bg-white transition-editorial w-fit">BOOK STAND</a>
                </div>
                <div className="w-full md:w-1/2 relative min-h-[250px]">
@@ -290,28 +317,83 @@ export default function PurchaseTickets() {
             </div>
 
             <div id="sponsors" className="text-center">
-               <p className="text-brand font-black tracking-[0.4em] uppercase text-[8px] mb-8">Partners & Sponsors</p>
-               <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center opacity-30 grayscale">
-                  {[1,2,3,4,5,6].map(i => <div key={i} className="h-8 w-full bg-charcoal/10 rounded-lg"></div>)}
+               <p className="text-brand font-black tracking-[0.4em] uppercase text-[8px] mb-12">Partners & Sponsors</p>
+               <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8 items-center justify-items-center opacity-40 hover:opacity-100 transition-editorial duration-1000">
+                  {[1,2,3,4,5,6,7,8,9,10,11,12].map(i => (
+                    <img 
+                      key={i} 
+                      src="https://www.awieforum.org/wp-content/uploads/2023/08/cropped-AWIEF-logo_transparant-2048x1192-1.jpg" 
+                      alt="Sponsor" 
+                      className="h-8 md:h-10 w-auto object-contain grayscale hover:grayscale-0 transition-editorial"
+                    />
+                  ))}
                </div>
             </div>
          </div>
       </section>
 
-      {/* 7. TRAVEL & FOOTER PREP */}
+      {/* 7. TRAVEL & ACCOMMODATION EXPANDED */}
       <section id="travel" className="py-16 px-6 md:px-12 bg-warm">
-         <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-[32px] border border-charcoal/5 group hover:border-brand transition-editorial">
-               <Hotel size={24} className="text-brand mb-6"/>
-               <h3 className="text-xl font-black uppercase font-heading mb-4">Stay</h3>
-               <p className="text-charcoal/50 text-sm italic mb-6">Discounted rates at leading Cape Town hotels.</p>
-               <a href="/contact-us" className="text-brand font-black text-[8px] uppercase tracking-widest flex items-center gap-2">PARTNER HOTELS <ArrowUpRight size={14}/></a>
+         <div className="max-w-[1400px] mx-auto">
+            <div className="text-center mb-16">
+               <h2 className="text-4xl md:text-5xl font-black uppercase font-heading tracking-tighter mb-4 leading-none">TRAVEL <span className="text-brand italic serif">& STAY</span></h2>
+               <p className="text-charcoal/40 text-lg font-medium italic max-w-2xl mx-auto">Planning your trip? We've secured exclusive rates for delegates.</p>
             </div>
-            <div className="bg-white p-8 rounded-[32px] border border-charcoal/5 group hover:border-brand transition-editorial">
-               <Plane size={24} className="text-brand mb-6"/>
-               <h3 className="text-xl font-black uppercase font-heading mb-4">Travel</h3>
-               <p className="text-charcoal/50 text-sm italic mb-6">Exclusive delegate flight promo codes.</p>
-               <a href="/contact-us" className="text-brand font-black text-[8px] uppercase tracking-widest flex items-center gap-2">REQUEST CODES <ArrowUpRight size={14}/></a>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+               <div className="bg-white p-10 rounded-[32px] border border-charcoal/5 group hover:border-brand transition-editorial shadow-xl">
+                  <div className="flex items-center gap-6 mb-8">
+                    <div className="w-16 h-16 rounded-2xl bg-warm flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-editorial"><Hotel size={28}/></div>
+                    <div>
+                      <h3 className="text-2xl font-black uppercase font-heading tracking-tight">Preferred Hotels</h3>
+                      <p className="text-[10px] font-black text-brand uppercase tracking-widest italic">Within 5-10 mins of CTICC</p>
+                    </div>
+                  </div>
+                  <div className="space-y-4 mb-10">
+                    {[
+                      { name: "The Westin Cape Town", dist: "Direct CTICC Access", rate: "Premium Partner" },
+                      { name: "Southern Sun The Cullinan", dist: "5 min walk", rate: "Preferred Rate" },
+                      { name: "AC Hotel by Marriott", dist: "7 min walk", rate: "Special Offer" }
+                    ].map((hotel, i) => (
+                      <div key={i} className="flex justify-between items-center py-3 border-b border-charcoal/5">
+                        <div>
+                          <p className="text-xs font-black uppercase">{hotel.name}</p>
+                          <p className="text-[9px] text-charcoal/40 font-medium italic">{hotel.dist}</p>
+                        </div>
+                        <span className="text-[9px] font-black text-brand border border-brand/20 px-3 py-1 rounded-full uppercase">{hotel.rate}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <a href="/contact-us" className="text-brand font-black text-[9px] uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-editorial">BOOK PARTNER RATES <ArrowUpRight size={16}/></a>
+               </div>
+               <div className="bg-white p-10 rounded-[32px] border border-charcoal/5 group hover:border-brand transition-editorial shadow-xl">
+                  <div className="flex items-center gap-6 mb-8">
+                    <div className="w-16 h-16 rounded-2xl bg-warm flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-white transition-editorial"><Plane size={28}/></div>
+                    <div>
+                      <h3 className="text-2xl font-black uppercase font-heading tracking-tight">Official Airline</h3>
+                      <p className="text-[10px] font-black text-brand uppercase tracking-widest italic">Global Connectivity</p>
+                    </div>
+                  </div>
+                  <div className="space-y-6 mb-10">
+                    <div className="p-6 bg-warm rounded-2xl border border-charcoal/5">
+                      <h4 className="text-xs font-black uppercase mb-2">Discounted Fares</h4>
+                      <p className="text-[11px] text-charcoal/50 font-medium leading-relaxed italic">
+                        Registered delegates qualify for up to <strong className="text-brand">15% discount</strong> on international and regional flights to Cape Town.
+                      </p>
+                    </div>
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="bg-cream p-4 rounded-xl text-center">
+                         <p className="text-[8px] font-black text-brand uppercase mb-1">Promo Code</p>
+                         <p className="text-xs font-black text-charcoal">AWIEF2026</p>
+                      </div>
+                      <div className="bg-cream p-4 rounded-xl text-center">
+                         <p className="text-[8px] font-black text-brand uppercase mb-1">Validity</p>
+                         <p className="text-xs font-black text-charcoal">Nov 5-15</p>
+                      </div>
+                    </div>
+                  </div>
+                  <a href="/contact-us" className="text-brand font-black text-[9px] uppercase tracking-widest flex items-center gap-2 hover:gap-4 transition-editorial">REQUEST FLIGHT CODES <ArrowUpRight size={16}/></a>
+               </div>
             </div>
          </div>
       </section>
