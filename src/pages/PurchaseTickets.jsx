@@ -350,11 +350,11 @@ export default function PurchaseTickets() {
         </div>
       </section>
 
-      {/* 7. CONDENSED AGENDA */}
+      {/* 7. CONDENSED AGENDA with Toggle */}
       <section id="agenda" className="py-16 px-6 md:px-12 bg-cream">
          <div className="max-w-[1400px] mx-auto">
             <div className="text-center mb-12">
-               <h2 className="text-4xl md:text-5xl font-black uppercase font-heading tracking-tighter mb-8">SUMMIT <span className="text-brand italic serif">AGENDA</span></h2>
+               <h2 className="text-4xl md:text-5xl font-black uppercase font-heading tracking-tighter mb-8">CONFERENCE <span className="text-brand italic serif">AGENDA</span></h2>
                <div className="flex justify-center gap-4">
                   {[1, 2].map(day => (
                     <button 
@@ -419,40 +419,41 @@ export default function PurchaseTickets() {
                </div>
             </div>
 
-            <div id="sponsors" className="space-y-16">
+            <div id="sponsors" className="space-y-12">
                <div className="text-center">
                   <p className="text-brand font-black tracking-[0.4em] uppercase text-[10px] mb-4">Strategic Partnership</p>
                   <h2 className="text-3xl md:text-5xl font-black uppercase font-heading tracking-tighter mb-4 leading-none">OUR <span className="text-brand italic serif">PARTNERS</span></h2>
                </div>
 
-               {[
-                 { cat: "Diamond", count: 1 },
-                 { cat: "Platinum", count: 2 },
-                 { cat: "Silver", count: 4 },
-                 { cat: "Bronze", count: 6 },
-                 { cat: "Technology", count: 2 },
-                 { cat: "Airline", count: 1 },
-                 { cat: "Media", count: 8 },
-                 { cat: "Knowledge", count: 3 }
-               ].map((branch) => (
-                 <div key={branch.cat} className="space-y-8">
-                   <div className="flex items-center gap-6">
-                      <div className="h-px bg-charcoal/5 flex-grow"></div>
-                      <span className="text-[10px] font-black text-brand uppercase tracking-[0.4em] italic">{branch.cat} Partners</span>
-                      <div className="h-px bg-charcoal/5 flex-grow"></div>
-                   </div>
-                   <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-8 items-center justify-center opacity-40 hover:opacity-100 transition-editorial duration-1000 px-12">
-                      {Array.from({ length: branch.count }).map((_, i) => (
-                        <img 
-                          key={i} 
-                          src="https://www.awieforum.org/wp-content/uploads/2023/08/cropped-AWIEF-logo_transparant-2048x1192-1.jpg" 
-                          alt="Partner" 
-                          className="h-6 md:h-8 w-auto object-contain grayscale hover:grayscale-0 transition-editorial mx-auto"
-                        />
-                      ))}
-                   </div>
-                 </div>
-               ))}
+               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {[
+                    { cat: "Diamond", count: 1 },
+                    { cat: "Platinum", count: 2 },
+                    { cat: "Silver", count: 4 },
+                    { cat: "Bronze", count: 6 },
+                    { cat: "Technology", count: 2 },
+                    { cat: "Airline", count: 1 },
+                    { cat: "Media", count: 8 },
+                    { cat: "Knowledge", count: 3 }
+                  ].map((branch) => (
+                    <div key={branch.cat} className="p-6 bg-warm rounded-3xl border border-charcoal/5 group hover:border-brand transition-editorial">
+                       <div className="flex items-center justify-between mb-6">
+                          <span className="text-[9px] font-black text-brand uppercase tracking-[0.3em] italic">{branch.cat} Partners</span>
+                          <span className="text-[8px] font-black text-charcoal/20 uppercase tracking-widest">{branch.count} {branch.count === 1 ? 'Partner' : 'Partners'}</span>
+                       </div>
+                       <div className="grid grid-cols-3 gap-4 items-center">
+                          {Array.from({ length: branch.count }).map((_, i) => (
+                            <img 
+                              key={i} 
+                              src="https://www.awieforum.org/wp-content/uploads/2023/08/cropped-AWIEF-logo_transparant-2048x1192-1.jpg" 
+                              alt="Partner" 
+                              className="h-4 md:h-5 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-editorial mx-auto"
+                            />
+                          ))}
+                       </div>
+                    </div>
+                  ))}
+               </div>
             </div>
          </div>
       </section>
