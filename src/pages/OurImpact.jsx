@@ -189,16 +189,30 @@ export default function OurImpact() {
             Last year, we convened the brightest minds, global policymakers, and ambitious founders. The conversations sparked have led to transformative policy recommendations across the continent.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto mb-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-20">
              {[
-               "photo-1540317580384-e5d43867caa6",
-               "photo-1556761175-5973dc0f32d7",
-               "photo-1573164574572-cb89e39749b4",
-               "photo-1551818255-e6e10975bc17"
-             ].map((img, i) => (
-               <div key={i} className={`aspect-square rounded-[40px] overflow-hidden shadow-xl border-4 border-white ${i % 2 !== 0 ? 'md:-translate-y-8' : ''} group`}>
-                  <img src={`https://images.unsplash.com/${img}?w=600&q=80`} alt={`Conference ${i}`} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-editorial duration-1000" />
-               </div>
+               { id: "qg1mfSal_Eg", title: "Conference Highlights Day 1", img: "photo-1540317580384-e5d43867caa6" },
+               { id: "qg1mfSal_Eg", title: "Keynote: Policy & Innovation", img: "photo-1556761175-5973dc0f32d7" },
+               { id: "qg1mfSal_Eg", title: "Closing Ceremony Gala", img: "photo-1573164574572-cb89e39749b4" }
+             ].map((video, i) => (
+               <a 
+                key={i} 
+                href={`https://www.youtube.com/watch?v=${video.id}`} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="group relative aspect-video rounded-[32px] overflow-hidden shadow-xl border-4 border-white hover:border-brand/20 transition-editorial duration-700 block"
+               >
+                  <img src={`https://images.unsplash.com/${video.img}?w=800&q=80`} alt={video.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-editorial duration-1000" />
+                  <div className="absolute inset-0 bg-charcoal/40 group-hover:bg-transparent transition-editorial duration-700"></div>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center text-brand shadow-2xl scale-90 group-hover:scale-100 transition-editorial pl-1">
+                      <Play size={24} fill="currentColor" />
+                    </div>
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <p className="text-white font-black text-xs uppercase font-heading tracking-tight opacity-0 group-hover:opacity-100 transition-editorial transform translate-y-2 group-hover:translate-y-0">{video.title}</p>
+                  </div>
+               </a>
              ))}
           </div>
 
