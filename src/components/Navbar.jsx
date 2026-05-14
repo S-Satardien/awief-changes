@@ -62,7 +62,7 @@ export default function Navbar({ activePage = '' }) {
             {/* Logo */}
             <div className="flex-shrink-0">
               <a href="/" className="block group">
-                <div className={`transition-editorial bg-white p-2 rounded-2xl ${isScrolled ? 'h-10' : 'h-14 shadow-2xl border border-charcoal/5'}`}>
+                <div className={`transition-editorial bg-white p-2 rounded-2xl ${isScrolled ? 'h-12' : 'h-18 shadow-2xl border border-charcoal/5'}`}>
                   <img 
                     src="https://www.awieforum.org/wp-content/uploads/2023/08/cropped-AWIEF-logo_transparant-2048x1192-1.jpg" 
                     alt="AWIEF" 
@@ -74,53 +74,53 @@ export default function Navbar({ activePage = '' }) {
             
             {/* Desktop Links */}
             <div className="hidden lg:flex items-center gap-10 text-[11px] font-black tracking-[0.2em]">
-              <a href="/" className={isActive('home')}>Home</a>
+              <a href="/" className={isActive('home')}>HOME</a>
               
               <NavItemWithDropdown 
-                label="About" 
+                label="ABOUT" 
                 active="about"
                 links={[
-                  { label: "About AWIEF", href: "/about" },
-                  { label: "Advisory Board", href: "/about#advisory-board" },
-                  { label: "Meet the Team", href: "/about#meet-the-team" },
-                  { label: "Our Partners", href: "/about#our-partners" },
-                  { label: "Get Involved", href: "/get-involved" }
+                  { label: "ABOUT AWIEF", href: "/about" },
+                  { label: "ADVISORY BOARD", href: "/about#advisory-board" },
+                  { label: "MEET THE TEAM", href: "/about#meet-the-team" },
+                  { label: "OUR PARTNERS", href: "/about#our-partners" },
+                  { label: "GET INVOLVED", href: "/get-involved" }
                 ]}
               />
 
-              <a href="/our-impact" className={isActive('our-impact')}>Our Impact</a>
-
               <NavItemWithDropdown 
-                label="What We Do" 
+                label="WHAT WE DO" 
                 active="what-we-do"
                 links={[
-                  { label: "Programmes", href: "/what-we-do" },
-                  { label: "Annual Conference", href: "/what-we-do#conference" },
-                  { label: "AWIEF Awards", href: "/what-we-do#awards" },
-                  { label: "Advocacy", href: "/what-we-do#advocacy" }
+                  { label: "PROGRAMMES", href: "/what-we-do" },
+                  { label: "ANNUAL CONFERENCE", href: "/what-we-do#conference" },
+                  { label: "AWIEF AWARDS", href: "/what-we-do#awards" },
+                  { label: "ADVOCACY", href: "/what-we-do#advocacy" }
                 ]}
               />
 
-              <a href="/news" className={isActive('news')}>News</a>
+              <a href="/our-impact" className={isActive('our-impact')}>OUR IMPACT</a>
+
+              <a href="/news" className={isActive('news')}>NEWS</a>
 
               <NavItemWithDropdown 
-                label="Get Involved" 
+                label="GET INVOLVED" 
                 active="get-involved"
                 links={[
-                  { label: "Individual Donor", href: "/get-involved#individual-donor" },
-                  { label: "Corporate Partner & CSI", href: "/get-involved#corporate-partner" },
-                  { label: "Volunteer", href: "/get-involved#volunteer" },
-                  { label: "Join Community", href: "/get-involved#join-community" }
+                  { label: "INDIVIDUAL DONOR", href: "/get-involved#individual-donor" },
+                  { label: "CORPORATE PARTNER & CSI", href: "/get-involved#corporate-partner" },
+                  { label: "VOLUNTEER", href: "/get-involved#volunteer" },
+                  { label: "JOIN COMMUNITY", href: "/get-involved#join-community" }
                 ]}
               />
 
-              <a href="/contact-us" className={isActive('contact')}>Contact Us</a>
+              <a href="/contact-us" className={isActive('contact')}>CONTACT US</a>
             </div>
 
             {/* CTA */}
             <div className="hidden lg:block">
               <a href="/donate" className="bg-brand text-white px-8 py-3.5 rounded-full text-[10px] font-black tracking-[0.2em] hover:bg-brand-dark transition-editorial shadow-2xl shadow-brand/20">
-                Donate
+                DONATE
               </a>
             </div>
 
@@ -138,14 +138,14 @@ export default function Navbar({ activePage = '' }) {
               <X size={32} />
             </button>
             <div className="flex flex-col items-center gap-8">
-              <a href="/" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">Home</a>
-              <a href="/about" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">About</a>
-              <a href="/our-impact" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">Our Impact</a>
-              <a href="/what-we-do" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">What We Do</a>
-              <a href="/news" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">News</a>
-              <a href="/get-involved" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">Get Involved</a>
-              <a href="/contact-us" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">Contact Us</a>
-              <a href="/donate" className="bg-brand text-white px-12 py-5 rounded-full font-black tracking-widest text-xs shadow-2xl">Donate</a>
+              <a href="/" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">HOME</a>
+              <a href="/about" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">ABOUT</a>
+              <a href="/what-we-do" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">WHAT WE DO</a>
+              <a href="/our-impact" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">OUR IMPACT</a>
+              <a href="/news" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">NEWS</a>
+              <a href="/get-involved" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">GET INVOLVED</a>
+              <a href="/contact-us" className="text-4xl font-heading font-black text-charcoal hover:text-brand tracking-tighter">CONTACT US</a>
+              <a href="/donate" className="bg-brand text-white px-12 py-5 rounded-full font-black tracking-widest text-xs shadow-2xl">DONATE</a>
             </div>
           </div>
         )}
