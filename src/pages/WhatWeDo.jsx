@@ -179,6 +179,7 @@ export default function WhatWeDo() {
       </section>
 
       {/* Immersive Summit Experience - High Impact Berry */}
+      {/* Immersive Summit Experience - High Impact Berry */}
       <section className="py-20 px-6 md:px-12 bg-brand text-white relative overflow-hidden" id="conference">
          <div className="african-pattern absolute inset-0 opacity-20 scale-150 rotate-12 brightness-200"></div>
          <div className="absolute top-0 right-0 p-24 opacity-10 pointer-events-none select-none text-[20rem] font-black rotate-12 text-white/10">2026</div>
@@ -214,21 +215,6 @@ export default function WhatWeDo() {
                         <p className="text-[10px] font-black text-gold uppercase tracking-widest">10 – 11 November 2026</p>
                         <p className="text-sm font-black uppercase font-heading tracking-tight text-white">Cape Town, South Africa</p>
                      </div>
-                  </div>
-
-                  {/* High Density Metrics */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-white/10">
-                    {[
-                      { label: "Delegates", val: "1000+", icon: Users },
-                      { label: "Countries", val: "50+", icon: Globe },
-                      { label: "Sectors", val: "All", icon: Building2 },
-                      { label: "Format", val: "Summit", icon: Presentation }
-                    ].map((m, i) => (
-                      <div key={i}>
-                         <p className="text-gold font-black text-[10px] uppercase tracking-widest mb-1">{m.val}</p>
-                         <p className="text-white/40 text-[8px] font-black uppercase tracking-widest">{m.label}</p>
-                      </div>
-                    ))}
                   </div>
                </div>
 
@@ -271,6 +257,24 @@ export default function WhatWeDo() {
                     </a>
                   </div>
                </div>
+            </div>
+
+            {/* High Density Metrics - Spanning Full Width */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-24">
+               {[
+                 { label: "Delegates", val: "1000+", icon: Users },
+                 { label: "Countries in Attendance", val: "50+", icon: Globe },
+                 { label: "Sectors Covered", val: "All", icon: Building2 },
+                 { label: "Event Format", val: "Summit", icon: Presentation }
+               ].map((m, i) => (
+                 <div key={i} className="bg-white/5 backdrop-blur-xl border border-white/10 p-10 rounded-[40px] text-center group hover:bg-gold hover:text-brand transition-editorial cursor-default shadow-xl">
+                    <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center mb-6 mx-auto group-hover:bg-brand group-hover:text-white transition-editorial">
+                       <m.icon size={24} />
+                    </div>
+                    <p className="text-4xl md:text-5xl font-black text-white group-hover:text-brand transition-editorial mb-2 font-heading tracking-tighter">{m.val}</p>
+                    <p className="text-gold font-black text-[10px] uppercase tracking-[0.4em] group-hover:text-brand transition-editorial">{m.label}</p>
+                 </div>
+               ))}
             </div>
          </div>
       </section>
