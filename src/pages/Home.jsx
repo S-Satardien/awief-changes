@@ -75,11 +75,11 @@ export default function Home() {
       <section className="bg-white py-12 px-8">
         <div className="max-w-[1400px] mx-auto">
           <div className="bg-brand/5 border-l-[12px] border-brand p-8 md:p-12 rounded-[40px] relative overflow-hidden shadow-sm group hover:shadow-xl transition-editorial">
-             <div className="african-pattern absolute inset-0 opacity-[0.05] pointer-events-none"></div>
+             <div className="african-pattern absolute inset-0 opacity-[0.2] scale-150 pointer-events-none brightness-0 contrast-200"></div>
              <div className="relative z-10">
-                <p className="text-lg md:text-2xl font-bold leading-relaxed text-charcoal/80">
-                  Africa Women Innovation and Entrepreneurship Forum is a 
-                  non-profit, <span className="text-brand font-black hover:text-brand-dark transition-colors cursor-default">award-winning</span> 
+                <p className="text-base md:text-xl font-bold leading-relaxed text-charcoal/80">
+                  The Africa Women Innovation and Entrepreneurship Forum (AWIEF) is a 
+                  non-profit, <span className="text-brand font-black hover:text-brand-dark transition-colors cursor-default">award-winning</span>, 
                   pan-African organization dedicated to <span className="text-brand font-black hover:text-brand-dark transition-colors cursor-default">women's economic empowerment</span>.
                 </p>
              </div>
