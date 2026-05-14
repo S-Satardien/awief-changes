@@ -8,76 +8,76 @@ export default function Home() {
     <div className="min-h-screen font-body text-charcoal bg-cream overflow-x-hidden">
       <Navbar activePage="home" />
       
-      {/* Hero Section - Video Background */}
-      <section className="relative h-[80vh] md:h-[90vh] bg-brand overflow-hidden flex items-center">
-        {/* Video Overlay & Content */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-brand/40 z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-brand/20 via-transparent to-brand/60 z-10"></div>
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-            className="w-full h-full object-cover grayscale opacity-60"
-          >
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-business-people-shaking-hands-in-the-office-32637-large.mp4" type="video/mp4" />
-          </video>
+      {/* Hero Section - Elevated to Brand Berry Identity */}
+      <section className="relative bg-brand pt-24 pb-24 px-8 overflow-hidden min-h-[70vh] flex items-center">
+        {/* Video Background Implementation */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <div className="absolute inset-0 bg-brand/60 z-10"></div>
+          <iframe 
+            className="absolute top-1/2 left-1/2 w-[100vw] h-[56.25vw] min-h-[100vh] min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2 pointer-events-none grayscale opacity-40"
+            src="https://www.youtube.com/embed/qg1mfSal_Eg?autoplay=1&mute=1&controls=0&loop=1&playlist=qg1mfSal_Eg&showinfo=0&rel=0&modestbranding=1"
+            frameBorder="0"
+            allow="autoplay; encrypted-media"
+            allowFullScreen
+          ></iframe>
         </div>
 
-        <div className="max-w-[1400px] mx-auto relative z-20 px-8 w-full">
-          <div className="max-w-4xl">
-            <p className="text-gold text-xs font-black tracking-[0.4em] uppercase mb-8 flex items-center gap-4">
-              <span className="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-              Join the Movement
-            </p>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-white leading-[0.85] tracking-tighter mb-12 uppercase font-heading">
-              Empowering <br />
-              <span className="text-gold italic serif normal-case">Women</span> <br />
-              Entrepreneurs
+        <div className="max-w-[1400px] mx-auto relative z-20 pt-32 md:pt-20">
+          <div className="max-w-4xl text-center md:text-left mx-auto md:mx-0">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tighter mb-10 uppercase font-heading">
+              Empowering Women <br />
+              to Shape the <br />
+              <span className="text-gold">
+                Global Economy
+              </span>
             </h1>
 
-            <div className="flex flex-wrap items-center gap-6">
-              <a href="/purchase-conference-tickets" className="bg-gold text-charcoal px-10 py-5 rounded-full font-black text-[10px] uppercase tracking-[0.3em] hover:bg-white transition-editorial shadow-2xl">
-                Register for Conference
-              </a>
-              <a href="https://www.youtube.com/watch?v=qg1mfSal_Eg" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-4 text-white hover:text-gold transition-editorial group">
-                <div className="w-14 h-14 rounded-full border border-white/30 flex items-center justify-center group-hover:border-gold group-hover:scale-110 transition-editorial bg-white/5 backdrop-blur-sm">
-                   <Play size={20} className="fill-current" />
+            {/* UN ECOSOC Consultative Status Badge - Kept in original position */}
+            <div className="bg-white/5 backdrop-blur-md border border-gold/30 rounded-xl p-5 mb-6 max-w-xl mx-auto md:mx-0 flex items-center justify-between group hover:border-gold transition-editorial">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 border-2 border-gold/60 rounded-full flex items-center justify-center">
+                  <Globe className="text-gold" size={20} />
                 </div>
-                <span className="text-[10px] font-black uppercase tracking-widest">Watch Our Story</span>
+                <div className="text-left">
+                  <h3 className="text-white font-bold text-sm tracking-widest uppercase mb-1">UN ECOSOC Consultative Status</h3>
+                  <p className="text-white/40 text-xs">Accredited Since 2023 - United Nations Economic and Social Council</p>
+                </div>
+              </div>
+              <div className="border border-gold/50 rounded-md px-3 py-1.5 text-gold text-xs font-bold tracking-wider shrink-0">
+                2023
+              </div>
+            </div>
+
+            <p className="text-white/40 text-xs flex items-center justify-center md:justify-start gap-2 mb-10">
+               <span className="flex gap-1">
+                 <div className="w-5 h-5 rounded-full border border-white/20 flex items-center justify-center"><Sparkles size={10}/></div>
+                 <div className="w-5 h-5 rounded-full border border-white/20 flex items-center justify-center"><Globe size={10}/></div>
+                 <div className="w-5 h-5 rounded-full border border-white/20 flex items-center justify-center"><Users size={10}/></div>
+               </span>
+               Highest UN Advisory Accreditation for Civil Society Organizations
+            </p>
+
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+              <a href="/purchase-conference-tickets" className="bg-gradient-to-r from-brand-dark to-brand text-white px-8 py-3.5 rounded font-bold hover:opacity-90 transition-opacity flex items-center gap-2 text-sm shadow-lg">
+                Register for Conference
+                <ArrowRight size={16} />
+              </a>
+              <a href="https://www.youtube.com/watch?v=qg1mfSal_Eg" target="_blank" rel="noopener noreferrer" className="border border-white/60 text-white px-8 py-3.5 rounded font-bold hover:bg-white/10 transition-colors flex items-center gap-2 text-sm">
+                <Play size={16} className="fill-current" />
+                Watch Our Story
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Description Section - Running across the page below Hero */}
-      <section className="py-24 px-8 bg-brand border-t border-white/10 relative overflow-hidden">
+      {/* New Dedicated Section for Description */}
+      <section className="bg-brand py-20 px-8 border-t border-white/10 relative overflow-hidden">
         <div className="african-pattern absolute inset-0 opacity-10"></div>
-        <div className="max-w-[1400px] mx-auto relative z-10 flex flex-col md:flex-row items-center gap-16">
-          <div className="md:w-1/2">
-             <p className="text-white/80 text-2xl md:text-3xl font-medium leading-relaxed italic border-l-8 border-gold pl-12">
-               Africa Women Innovation and Entrepreneurship Forum (AWIEF) is a non-profit, award-winning pan-African organization dedicated to women's economic empowerment.
-             </p>
-          </div>
-          <div className="md:w-1/2">
-             {/* UN ECOSOC Consultative Status Badge - Re-integrated for balance */}
-             <div className="bg-white/5 backdrop-blur-md border border-gold/30 rounded-3xl p-8 group hover:border-gold transition-editorial shadow-2xl">
-                <div className="flex items-center gap-6 mb-6">
-                  <div className="w-16 h-16 bg-gold/20 rounded-2xl flex items-center justify-center border border-gold/30">
-                    <Globe className="text-gold" size={32} />
-                  </div>
-                  <div>
-                    <h3 className="text-white font-black text-lg tracking-widest uppercase mb-1 font-heading">UN ECOSOC Consultative Status</h3>
-                    <p className="text-white/40 text-[10px] uppercase tracking-widest font-black">Accredited Since 2023</p>
-                  </div>
-                </div>
-                <p className="text-white/60 text-sm leading-relaxed mb-0 font-medium">
-                  Highest UN Advisory Accreditation for Civil Society Organizations, providing us a global platform to influence policy at the United Nations Economic and Social Council.
-                </p>
-             </div>
-          </div>
+        <div className="max-w-[1400px] mx-auto relative z-10">
+          <p className="text-white/70 text-2xl md:text-3xl leading-relaxed max-w-5xl italic border-l-4 border-gold pl-10">
+            Africa Women Innovation and Entrepreneurship Forum is a non-profit, award-winning pan-African organization dedicated to women's economic empowerment.
+          </p>
         </div>
       </section>
 
