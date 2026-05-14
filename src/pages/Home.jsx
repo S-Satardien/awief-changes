@@ -23,7 +23,7 @@ export default function Home() {
         </div>
 
         <div className="max-w-[1400px] mx-auto relative z-20 pt-32 md:pt-20">
-          <div className="max-w-4xl text-center md:text-left mx-auto md:mx-0">
+          <div className="max-w-4xl text-left">
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.1] tracking-tighter mb-10 uppercase font-heading">
               Empowering Women <br />
               to Shape the <br />
@@ -33,7 +33,7 @@ export default function Home() {
             </h1>
 
             {/* UN ECOSOC Consultative Status Badge - Kept in original position */}
-            <div className="bg-white/5 backdrop-blur-md border border-gold/30 rounded-xl p-5 mb-6 max-w-xl mx-auto md:mx-0 flex items-center justify-between group hover:border-gold transition-editorial">
+            <div className="bg-white/5 backdrop-blur-md border border-gold/30 rounded-xl p-5 mb-6 max-w-xl mx-0 flex items-center justify-between group hover:border-gold transition-editorial">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 border-2 border-gold/60 rounded-full flex items-center justify-center">
                   <Globe className="text-gold" size={20} />
@@ -57,7 +57,7 @@ export default function Home() {
                Highest UN Advisory Accreditation for Civil Society Organizations
             </p>
 
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+            <div className="flex flex-wrap items-center justify-start gap-4">
               <a href="/purchase-conference-tickets" className="bg-gradient-to-r from-brand-dark to-brand text-white px-8 py-3.5 rounded font-bold hover:opacity-90 transition-opacity flex items-center gap-2 text-sm shadow-lg">
                 Register for Conference
                 <ArrowRight size={16} />
@@ -74,8 +74,8 @@ export default function Home() {
       {/* New Dedicated Section for Description */}
       <section className="bg-brand py-20 px-8 border-t border-white/10 relative overflow-hidden">
         <div className="african-pattern absolute inset-0 opacity-10"></div>
-        <div className="max-w-[1400px] mx-auto relative z-10">
-          <p className="text-white/70 text-2xl md:text-3xl leading-relaxed max-w-5xl italic border-l-4 border-gold pl-10">
+        <div className="max-w-[1400px] relative z-10">
+          <p className="text-white/70 text-2xl md:text-3xl leading-relaxed max-w-5xl italic border-l-4 border-gold pl-10 text-left">
             Africa Women Innovation and Entrepreneurship Forum is a non-profit, award-winning pan-African organization dedicated to women's economic empowerment.
           </p>
         </div>
