@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { Rocket, Briefcase, Award, Globe, ArrowRight, MapPin, Users, Calendar, ShieldCheck, Zap, Sparkles, Target, Lightbulb, Mic, Star, X, Info, TrendingUp, MoveRight, Megaphone, Play, Layers } from 'lucide-react'
+import { Rocket, Briefcase, Award, Globe, ArrowRight, MapPin, Users, Calendar, ShieldCheck, Zap, Sparkles, Target, Lightbulb, Mic, Star, X, Info, TrendingUp, MoveRight, Megaphone, Play, Layers, Building2, Presentation, CheckCircle2 } from 'lucide-react'
 
 const programmesData = [
   {
@@ -180,56 +180,94 @@ export default function WhatWeDo() {
 
       {/* Immersive Summit Experience - High Impact Berry */}
       <section className="py-20 px-6 md:px-12 bg-brand text-white relative overflow-hidden" id="conference">
-         <div className="african-pattern absolute inset-0 opacity-30 scale-150 rotate-12 brightness-200"></div>
-         <div className="absolute top-0 right-0 p-12 opacity-10 pointer-events-none select-none text-[15rem] font-black rotate-12 text-white/10">2026</div>
+         <div className="african-pattern absolute inset-0 opacity-20 scale-150 rotate-12 brightness-200"></div>
+         <div className="absolute top-0 right-0 p-24 opacity-10 pointer-events-none select-none text-[20rem] font-black rotate-12 text-white/10">2026</div>
          
          <div className="max-w-[1400px] mx-auto relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 mt-8 pt-8 border-t border-white/10">
+            <div className="grid lg:grid-cols-12 gap-16 items-start">
                <div className="lg:col-span-7">
-                  <div className="inline-flex items-center gap-2 px-2 py-0.5 rounded-full border border-brand/40 bg-brand/10 backdrop-blur mb-5">
-                     <Sparkles size={8} className="text-brand animate-pulse"/>
-                     <span className="text-brand text-[7px] font-black tracking-[0.3em] uppercase">Save The Date</span>
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand/40 bg-brand/10 backdrop-blur mb-10">
+                     <Sparkles size={12} className="text-brand animate-pulse"/>
+                     <span className="text-brand text-[9px] font-black tracking-[0.3em] uppercase">The Platform</span>
                   </div>
-                  <h2 className="text-4xl md:text-6xl font-black uppercase font-heading leading-[0.75] tracking-tighter mb-5">
+                  <h2 className="text-5xl md:text-[6rem] font-black uppercase font-heading leading-[0.8] tracking-tighter mb-10">
                     Beyond <br/> <span className="text-gold serif italic normal-case">Access</span>
                   </h2>
-                  <p className="text-2xl md:text-3xl text-white/80 font-medium leading-tight italic max-w-2xl border-l-8 border-gold pl-12 mb-16">
-                    Beyond Access: Owning Capital, Markets & Power. The nexus of policy, capital, and innovation.
-                  </p>
+                  
+                  <div className="space-y-8 mb-16 pr-12">
+                    <p className="text-lg md:text-xl text-white/80 font-medium italic leading-relaxed border-l-4 border-gold pl-8">
+                      AWIEF returns in 2026 as Africa’s premier platform for women in entrepreneurship, leadership, and innovation — convening the continent’s most influential entrepreneurs, investors, corporates, policymakers, and ecosystem builders.
+                    </p>
+                    <p className="text-base text-white/60 leading-relaxed font-medium">
+                      Under the theme <strong className="text-gold">“Beyond Access: Owning Capital, Markets & Power,”</strong> AWIEF2026 shifts the conversation from participation to ownership — exploring how women can move beyond access to resources toward greater control of capital and stronger market positioning.
+                    </p>
+                    <p className="text-sm text-white/40 leading-relaxed italic">
+                      Bringing together a high-level conference and a dynamic exhibition, AWIEF2026 creates a powerful space where ideas, business, and opportunity meet. The event is designed to accelerate collaboration and drive inclusive growth across Africa.
+                    </p>
+                  </div>
+
                   <div className="flex flex-wrap gap-8 items-center mb-16">
-                     <a href="/purchase-conference-tickets" className="bg-white text-charcoal px-12 py-6 rounded-full font-black text-[10px] uppercase tracking-[0.3em] hover:bg-gold hover:text-white transition-editorial shadow-2xl">
+                     <a href="/purchase-conference-tickets" className="bg-white text-charcoal px-10 py-5 rounded-full font-black text-[9px] uppercase tracking-[0.3em] hover:bg-gold hover:text-white transition-editorial shadow-2xl">
                         GO TO AWIEF2026
                      </a>
-                     <div className="flex items-center gap-6">
-                        <div className="text-right">
-                           <p className="text-[10px] font-black text-gold uppercase tracking-widest">10 – 11 November 2026</p>
-                           <p className="text-sm font-black uppercase font-heading tracking-tight text-white">Cape Town, South Africa</p>
-                        </div>
+                     <div className="text-left border-l border-white/10 pl-8">
+                        <p className="text-[10px] font-black text-gold uppercase tracking-widest">10 – 11 November 2026</p>
+                        <p className="text-sm font-black uppercase font-heading tracking-tight text-white">Cape Town, South Africa</p>
                      </div>
                   </div>
-                  <div className="space-y-6 text-white/60 text-lg font-medium italic leading-relaxed">
-                    <p>
-                      The AWIEF Annual Conference and Awards is Africa’s premier platform for women in entrepreneurship, leadership, and innovation. 
-                    </p>
-                    <p>
-                      Convening the continent’s most influential entrepreneurs, investors, corporates, policymakers, and ecosystem builders to accelerate collaboration and unlock new markets.
-                    </p>
+
+                  {/* High Density Metrics */}
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-12 border-t border-white/10">
+                    {[
+                      { label: "Delegates", val: "1000+", icon: Users },
+                      { label: "Countries", val: "50+", icon: Globe },
+                      { label: "Sectors", val: "All", icon: Building2 },
+                      { label: "Format", val: "Summit", icon: Presentation }
+                    ].map((m, i) => (
+                      <div key={i}>
+                         <p className="text-gold font-black text-[10px] uppercase tracking-widest mb-1">{m.val}</p>
+                         <p className="text-white/40 text-[8px] font-black uppercase tracking-widest">{m.label}</p>
+                      </div>
+                    ))}
                   </div>
                </div>
-               <div className="lg:col-span-5 relative">
-                  <div className="aspect-video rounded-[48px] overflow-hidden shadow-[0_0_100px_rgba(127,61,89,0.3)] relative group border-4 border-white/5 bg-charcoal">
+
+               <div className="lg:col-span-5 space-y-8">
+                  <div className="aspect-video rounded-[32px] overflow-hidden shadow-2xl border-2 border-white/10 bg-charcoal group relative">
                     <iframe 
-                      className="w-full h-full grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-editorial duration-700"
+                      className="w-full h-full grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-editorial duration-700"
                       src="https://www.youtube.com/embed/qg1mfSal_Eg"
                       title="AWIEF Conference Highlights"
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     ></iframe>
+                    <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-brand/40 to-transparent"></div>
                   </div>
-                  <div className="mt-8 flex justify-center">
+
+                  <div className="bg-white/5 backdrop-blur-xl rounded-[40px] p-10 border border-white/10">
+                    <h4 className="text-xl font-black uppercase font-heading mb-8 text-gold">Why Attend</h4>
+                    <div className="grid gap-6">
+                      {[
+                        { t: "Thought Leadership", d: "Industry-leading keynotes." },
+                        { t: "Unrivalled Networking", d: "Global B2B matchmaking." },
+                        { t: "Industry Trends", d: "Market intelligence." },
+                        { t: "Business Growth", t2: "Skills & Learning", d: "Engaging workshops & masterclasses." }
+                      ].map((item, i) => (
+                        <div key={i} className="flex gap-4 items-start">
+                          <CheckCircle2 size={16} className="text-gold shrink-0 mt-0.5" />
+                          <div>
+                            <p className="text-[10px] font-black uppercase tracking-widest leading-none mb-1">{item.t} {item.t2 && `& ${item.t2}`}</p>
+                            <p className="text-[9px] text-white/40 font-medium italic">{item.d}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center">
                     <a href="/past-conferences" className="text-white/40 font-black text-[10px] uppercase tracking-[0.4em] hover:text-gold transition-editorial flex items-center gap-3 group">
-                        VIEW PAST CONFERENCES <MoveRight size={18} className="group-hover:translate-x-2 transition-editorial text-gold" />
+                        PAST HIGHLIGHTS <MoveRight size={18} className="group-hover:translate-x-2 transition-editorial text-gold" />
                     </a>
                   </div>
                </div>
