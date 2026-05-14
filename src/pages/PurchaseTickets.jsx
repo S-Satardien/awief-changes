@@ -213,7 +213,7 @@ export default function PurchaseTickets() {
                       <Star size={24} />
                     </div>
                     <p className="text-2xl font-black uppercase font-heading leading-tight mb-4">
-                      Theme: Beyond Access
+                      Beyond Access: Owning Capital, Markets & Power
                     </p>
                     <p className="text-lg font-medium italic opacity-80">
                       AWIEF2026 shifts the conversation from participation to ownership — exploring how women can move beyond access to resources toward greater control of capital, stronger market positioning, and influence in economic decision-making.
