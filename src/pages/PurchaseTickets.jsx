@@ -443,12 +443,19 @@ export default function PurchaseTickets() {
                        </div>
                        <div className="grid grid-cols-3 gap-4 items-center">
                           {Array.from({ length: branch.count }).map((_, i) => (
-                            <img 
+                            <a 
                               key={i} 
-                              src="https://www.awieforum.org/wp-content/uploads/2023/08/cropped-AWIEF-logo_transparant-2048x1192-1.jpg" 
-                              alt="Partner" 
-                              className="h-4 md:h-5 w-auto object-contain grayscale opacity-60 hover:opacity-100 hover:grayscale-0 transition-editorial mx-auto"
-                            />
+                              href="https://www.awieforum.org/awief2026-conference-exhibition-save-the-date/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block group/logo"
+                            >
+                              <img 
+                                src="https://www.awieforum.org/wp-content/uploads/2023/08/cropped-AWIEF-logo_transparant-2048x1192-1.jpg" 
+                                alt="Partner" 
+                                className="h-4 md:h-5 w-auto object-contain grayscale opacity-60 group-hover/logo:opacity-100 group-hover/logo:grayscale-0 group-hover/logo:scale-110 transition-editorial mx-auto"
+                              />
+                            </a>
                           ))}
                        </div>
                     </div>
