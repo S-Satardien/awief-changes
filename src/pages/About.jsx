@@ -145,36 +145,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Keys to Success - Clean Editorial Section */}
-      <section className="bg-warm py-32 px-8 relative overflow-hidden border-y border-charcoal/5">
-        <div className="african-pattern absolute inset-0 opacity-[0.03] scale-150 brightness-0"></div>
-        <div className="max-w-[1400px] mx-auto relative z-10 text-center">
-          <div className="max-w-3xl mx-auto mb-24">
-            <h2 className="text-5xl md:text-7xl font-black text-charcoal mb-8 uppercase font-heading tracking-tighter leading-[0.9]">Our Keys to <span className="text-brand italic serif normal-case">Success</span></h2>
-            <p className="text-charcoal/50 text-xl leading-relaxed font-medium italic">
-              We facilitate, support, and inspire women entrepreneurs by providing knowledge, tools, resources, and valuable connections.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {[
-              { icon: TrendingUp, t: "Enterprise Development", d: "Innovative products for enabling ecosystems." },
-              { icon: Globe, t: "Annual Conference", d: "World-class networking and pan-African exhibitions." },
-              { icon: Award, t: "AWIEF Awards", d: "Recognizing outstanding female achievement." },
-              { icon: Users, t: "Online Community", d: "A digital space to rise and fulfill potential." },
-              { icon: BookOpen, t: "Policy Advocacy", d: "Cross-cutting advocacy for gender equality." },
-            ].map((key, i) => (
-              <div key={i} className="bg-white p-10 rounded-[40px] shadow-sm border border-charcoal/5 hover:border-brand transition-editorial group flex flex-col items-center text-center hover:shadow-2xl hover:-translate-y-2">
-                <div className="w-16 h-16 rounded-2xl bg-brand/5 flex items-center justify-center text-brand mb-8 group-hover:bg-brand group-hover:text-white transition-editorial border border-brand/10">
-                  <key.icon size={32} strokeWidth={1.5} />
-                </div>
-                <h4 className="text-charcoal font-black uppercase font-heading text-sm mb-4 leading-tight">{key.t}</h4>
-                <p className="text-charcoal/40 text-[10px] font-black tracking-widest uppercase leading-relaxed">{key.d}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Advisory Board - Elevated Profile Grid */}
       <section className="py-32 px-8 bg-white relative" id="advisory-board">
